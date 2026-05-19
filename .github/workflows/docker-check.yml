@@ -1,0 +1,18 @@
+name: Docker Build Check
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  merge_group:
+
+jobs:
+  docker-build:
+    name: Build image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Attempt to build the image
+        run: docker build -t mobile-eventownik-test .
