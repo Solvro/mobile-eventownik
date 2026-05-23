@@ -3,7 +3,7 @@ import TopBar from '../components/navigation/TopBar.vue'
 import LoadingIndicator from '../components/LoadingIndicator.vue'
 import ItemBox from '../components/ItemBox.vue'
 
-import rightArrow from '../assets/arrow.svg'
+import { ChevronRight as rightArrow } from '@lucide/vue'
 
 import { useApiDataStore } from '../stores/api.js'
 import { mapStores } from 'pinia'

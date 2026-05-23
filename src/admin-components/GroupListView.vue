@@ -3,7 +3,7 @@ import TopBar from '../components/navigation/TopBar.vue'
 import ItemBox from '../components/ItemBox.vue'
 import LoadingIndicator from '../components/LoadingIndicator.vue'
 
-import rightArrow from '../assets/arrow.svg'
+import { ChevronRight as rightArrow } from '@lucide/vue'
 
 import { apiRequest } from '../stores/functions.js'
 import { IonPage, IonContent } from '@ionic/vue';

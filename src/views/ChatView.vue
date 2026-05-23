@@ -11,8 +11,10 @@ import moment from 'moment'
 
 import { apiSocket } from '@/stores/functions.js'
 
-import sendIcon from '../assets/icons8-paper_plane.png'
-import downArrowIcon from '../assets/icons8-down-100.png'
+import { 
+    SendHorizonal as sendIcon,
+    MoveDown as downArrowIcon
+ } from '@lucide/vue'
 
 import { IonPage, IonContent } from '@ionic/vue';
 import { nextTick } from 'vue'
@@ -67,7 +69,7 @@ import { nextTick } from 'vue'
 
                         <div class="goToBottom" @pointerdown="cacheFocusState" @touchstart="cacheFocusState"
                              @click.prevent="scrollToBottomAndRefocus" v-if="!isAtBottom">
-                            <img :src="downArrowIcon" />
+                            <downArrowIcon />
                         </div>
 
 
@@ -81,7 +83,7 @@ import { nextTick } from 'vue'
 
                             <button class="textBoxButton sendIcon" v-else type="button" tabindex="-1"
                                 @pointerdown="cacheFocusState" @touchstart="cacheFocusState"
-                                @click.prevent="sendMessage"><img :src="sendIcon" /></button>
+                                @click.prevent="sendMessage"><sendIcon/></button>
 
                         </div>
                     </div>

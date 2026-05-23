@@ -18,7 +18,7 @@ defineProps({
     default: 'var(--bg-light-translusent)'
   },
   leftIcon: {
-    type: String,
+    type: [Object, String, Function],
     required: false
   },
   leftIconWhite: {
@@ -32,7 +32,7 @@ defineProps({
     default: false
   },
   rightIcon: {
-    type: String,
+    type: [Object, String, Function],
     required: false
   },
   small: {
@@ -47,7 +47,8 @@ defineProps({
   <div class="item" :style="{ backgroundColor: bgColor }" :class="{ small: small }">
     <div class="itemLeft">
       <div v-if="leftIcon" class="leftIcon" :class="{ 'noRoundIcon': noRoundIcon }">
-        <img :src="leftIcon" :class="{ 'white-icon': leftIconWhite }" />
+        <img v-if="typeof leftIcon === 'string'" :src="leftIcon" class="{ 'white-icon': leftIconWhite }" />
+        <component v-else :is="leftIcon" :class="{ 'white-icon': leftIconWhite }" />
       </div>
       <h6 v-if="leftBigText">{{ leftBigText }}</h6>
       <div class="text">
@@ -56,7 +57,8 @@ defineProps({
       </div>
     </div>
     <div v-if="rightIcon" class="rightIcon">
-      <img :src="rightIcon" />
+      <img v-if="typeof rightIcon === 'string'" :src="rightIcon"/>
+      <component v-else :is="rightIcon"/>
     </div>
     <slot>
     </slot>

@@ -9,8 +9,10 @@ import { mapStores } from 'pinia'
 
 import { apiRequest } from '../stores/functions.js'
 
-import okIcon from '../assets/icons8-ok.png'
-import cryingIcon from '../assets/icons8-crying.png'
+import { 
+    Frown as cryingIcon,
+    CircleCheck as okIcon
+} from '@lucide/vue'
 
 // import moment from 'moment'
 import { IonPage, IonContent } from '@ionic/vue';
@@ -99,7 +101,7 @@ import { IonPage, IonContent } from '@ionic/vue';
 
                 <div class="padding info-screen" v-if="success">
                     <h3>Gratulacje!</h3>
-                    <img :src="okIcon" alt="ok" style="width: 100px; margin: 20px auto; display: block;" />
+                    <component :is="okIcon" aria-label="ok" style="width: 100px; margin: 20px auto; display: block;" />
                     <p>Twoja grupa została zapisana na grę nocną.</p>
                     <p>W razie problemów prosimy o kontakt ze sztabem.</p>
                     <p>Do zobaczenia na grze!</p>
@@ -112,7 +114,7 @@ import { IonPage, IonContent } from '@ionic/vue';
                 <div class="padding info-screen"
                     v-else-if="apiDataStore.nightGameGroupInfo.ready && !apiDataStore.nightGameGroupInfo.data.free_places && !apiDataStore.nightGameGroupInfo.data.user_in_group">
                     <h3>Brak miejsc!</h3>
-                    <img :src="cryingIcon" alt="crying" style="width: 100px; margin: 20px auto; display: block;" />
+                    <component :is="cryingIcon" aria-label="crying" style="width: 100px; margin: 20px auto; display: block;" />
                     <p>Przepraszamy, ale miejsca na grę nocną już się skończyły.</p>
 
                     <RouterLink :to="$router.options.history.state.back || '/'">
@@ -123,7 +125,7 @@ import { IonPage, IonContent } from '@ionic/vue';
                 <div class="padding info-screen"
                     v-else-if="apiDataStore.nightGameGroupInfo.ready && !apiDataStore.nightGameGroupInfo.data.night_game_signup_active && !apiDataStore.nightGameGroupInfo.data.user_in_group">
                     <h3>Zapisy zamknięte!</h3>
-                    <img :src="cryingIcon" alt="crying" style="width: 100px; margin: 20px auto; display: block;" />
+                    <component :is="cryingIcon" aria-label="crying" style="width: 100px; margin: 20px auto; display: block;" />
                     <p>Przepraszamy, ale zapisy na grę nocną są zamknięte.</p>
 
                     <RouterLink :to="$router.options.history.state.back || '/'">
@@ -134,7 +136,7 @@ import { IonPage, IonContent } from '@ionic/vue';
                 <div class="padding info-screen"
                     v-else-if="apiDataStore.nightGameGroupInfo.ready && apiDataStore.nightGameGroupInfo.data.user_in_group">
                     <h3>Już jesteś zapisany na grę nocną</h3>
-                    <img :src="okIcon" alt="ok" style="width: 100px; margin: 20px auto; display: block;" />
+                    <component :is="okIcon" aria-label="ok" style="width: 100px; margin: 20px auto; display: block;" />
                     <p>Już jesteś zapisany na grę nocną.</p>
 
                     <p style="margin-top: 20px">Grupę możesz zobaczyć w zakładce <RouterLink to="/profil"><u>profil</u>

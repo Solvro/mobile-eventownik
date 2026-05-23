@@ -5,7 +5,7 @@ defineProps(['title', 'icon', 'link']);
 <template>
   <div class="card" @click="click">
     <div class="card__icon">
-      <img :src="icon" alt="icon" />
+      <component :is="icon" aria-label="icon" />
     </div>
     <div class="card__title">
       <p>{{ title }}</p>

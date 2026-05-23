@@ -3,7 +3,7 @@ import ItemBox from '../components/ItemBox.vue'
 import TopBar from '../components/navigation/TopBar.vue'
 import LoadingIndicator from '../components/LoadingIndicator.vue'
 
-import phoneIcon from '../assets/phone_icon.svg'
+import { Phone as phoneIcon } from '@lucide/vue'
 import { IonPage, IonContent } from '@ionic/vue';
 
 defineProps([

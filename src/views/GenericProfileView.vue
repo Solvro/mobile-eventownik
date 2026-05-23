@@ -6,16 +6,17 @@ import moment from 'moment'
 import { useApiDataStore } from '../stores/api.js'
 import { mapStores } from 'pinia'
 
-
-import rightArrow from '../assets/arrow.svg'
-import faqIcon from '../assets/icons8-faq.png'
-import busIcon from '../assets/icons8-bus.png'
-import opaskaIcon from '../assets/icons8-bangles.png'
-// import codeIcon from '../assets/icons8-redeem-90.png'
-import domekIcon from '../assets/icons8-exterior.png'
-import mealIcon from '../assets/icons8-cutlery.png'
-import chatIcon from '../assets/icons8-chat.png'
-import beerIcon from '../assets/icons8-beer.png'
+import { 
+  MessageCircleQuestionMark as faqIcon, 
+  Bus as busIcon,
+  Ribbon as opaskaIcon,
+  House as domekIcon,
+  Utensils as mealIcon,
+  MessagesSquare as chatIcon,
+  Beer as beerIcon,
+  ChevronRight as rightArrow
+} from '@lucide/vue'
+//import { RectangleEllipsis as codeIcon } from '@lucide/vue'
 
 import { IonPage, IonContent, toastController } from '@ionic/vue';
 import { Clipboard } from '@capacitor/clipboard';

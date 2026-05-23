@@ -1,6 +1,6 @@
 <script setup>
 
-import { IonPage, IonContent, IonIcon, IonButton, toastController, IonNavLink } from '@ionic/vue';
+import { IonPage, IonContent, IonButton, toastController, IonNavLink } from '@ionic/vue';
 import { apiRequest } from '@/stores/functions'
 import TopBar from '@/components/navigation/TopBar.vue'
 

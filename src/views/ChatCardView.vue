@@ -1,18 +1,21 @@
 <script setup>
-import { IonIcon } from '@ionic/vue';
-import { home, person, people } from 'ionicons/icons';
 import moment from 'moment';
 defineProps(['chat']);
-import noRemindersIcon from '@/assets/icons8-no-reminders-96.png';
+import { 
+    BellOff as noRemindersIcon,
+    UserRound as person,
+    UsersRound as people,
+    House as home
+} from '@lucide/vue';
 </script>
 
 <template>
     <div class="chat-element">
         <div class="chat-element__avatar">
-            <ion-icon v-if="chat.house_chat" :src="home" />
+            <component v-if="chat.house_chat" :is="home" />
             <img class="avatar" :src="chat.avatar" alt="avatar" v-else-if="chat.avatar" />
-            <ion-icon v-else-if="chat.users.length <= 2" :src="person" />
-            <ion-icon v-else :src="people" />
+            <component v-else-if="chat.users.length <= 2" :is="person" />
+            <component v-else :is="people" />
         </div>
         <div class="chat-element__content">
             <div class="chat-element__header">
@@ -25,7 +28,7 @@ import noRemindersIcon from '@/assets/icons8-no-reminders-96.png';
                         chat.last_message.message ? chat.last_message.message.substring(0, 250) : ''
                     }}{{ chat.last_message.message && chat.last_message.message.length > 250 ? '...' : '' }}
                 </p>
-                <img v-if="chat.notifications_blocked" :src="noRemindersIcon" class="no-reminders" />
+                <component v-if="chat.notifications_blocked" :is="noRemindersIcon" class="no-reminders" />
             </div>
         </div>
     </div>

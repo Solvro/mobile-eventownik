@@ -6,17 +6,17 @@ import ItemBox from '../components/ItemBox.vue'
 import LoadingIndicator from '../components/LoadingIndicator.vue'
 import moment from 'moment'
 
-import logoutIcon from '../assets/icons8-logout.png'
-import politykaPrywatnosciIcon from '../assets/icons8-terms_and_conditions.png'
-import regulaminIcon from '../assets/icons8-rules_book.png'
-import icons8Icon from '../assets/icons8-icons8.png'
-import rightArrow from '../assets/arrow.svg'
-import adminPanelIcon from '../assets/icons8-administrative_tools.png'
-import AnnouncementIcon from '../assets/icons8-megaphone-100.png'
+import { 
+  Megaphone as AnnouncementIcon ,
+  LogOut as logoutIcon,
+  FileText as politykaPrywatnosciIcon,
+  BookOpenText as regulaminIcon,
+  MonitorCog as adminPanelIcon,
+  Flame as tinderIcon,
+  ChevronRight as rightArrow
+} from '@lucide/vue'
 
-
-// import copyIcon from '../assets/icons8-copy.png'
-import tinderIcon from '../assets/icons8-tinder-100.png'
+//import { Copy as copyIcon } from '@lucide/vue'
 
 import VueQr from 'vue-qr/src/packages/vue-qr.vue'
 import OverlayView from '../components/OverlayView.vue'
@@ -135,17 +135,11 @@ const VITE_API_URL = import.meta.env.VITE_API_URL;
             :checked="profileData.notifications"></ion-toggle>
         </ItemBox>
 
-        <div class="spacer"></div>
-
         <a :href="REGULAMIN_LINK" target="_blank" v-if="REGULAMIN_LINK">
           <ItemBox big-text="Regulamin" :leftIcon="regulaminIcon" small />
         </a>
         <a :href="POLITYKA_PRYWATNOSCI_LINK" target="_blank" v-if="POLITYKA_PRYWATNOSCI_LINK">
           <ItemBox big-text="Polityka prywatności" :leftIcon="politykaPrywatnosciIcon" small />
-        </a>
-
-        <a href="https://icons8.com" target="_blank">
-          <ItemBox big-text="Użyte ikonki pochodzą z Icons8" :leftIcon="icons8Icon" small />
         </a>
 
         <div class="spacer"></div>

@@ -8,9 +8,11 @@ import { mapStores } from 'pinia'
 import { apiRequest } from '../stores/functions.js'
 import { RouterLink } from 'vue-router'
 import ItemBox from '../components/ItemBox.vue'
-import phoneIcon from '@/assets/phone_icon.svg'
-import domekIcon from '@/assets/icons8-exterior.png'
-import rightArrow from '@/assets/arrow.svg'
+import { 
+  Phone as phoneIcon,
+  Home as domekIcon,
+  ChevronRight as rightArrow
+} from '@lucide/vue'
 
 import { IonButton, IonSpinner } from '@ionic/vue'
 import TextBox from '@/components/TextBox.vue'

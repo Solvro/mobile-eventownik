@@ -6,9 +6,11 @@ import LoadingIndicator from '../components/LoadingIndicator.vue'
 import { useApiDataStore } from '../stores/api.js'
 import { mapStores } from 'pinia'
 
-import rightArrow from '../assets/arrow.svg'
-import faqIcon from '../assets/icons8-faq.png'
-import phoneIcon from '../assets/phone_icon.svg'
+import { 
+  MessageCircleQuestionMark as faqIcon,
+  Phone as phoneIcon,
+  ChevronRight as rightArrow
+} from '@lucide/vue'
 import { IonPage, IonContent } from '@ionic/vue';
 import ProfileCircle from '../components/navigation/ProfileCircle.vue'
 

@@ -6,7 +6,7 @@ import LoadingIndicator from '../components/LoadingIndicator.vue'
 import { useApiDataStore } from '../stores/api.js'
 import { mapStores } from 'pinia'
 
-import rightArrow from '../assets/arrow.svg'
+import { ChevronRight as rightArrow } from '@lucide/vue'
 import { IonPage, IonContent } from '@ionic/vue';
 </script>
 

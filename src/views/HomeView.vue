@@ -17,12 +17,14 @@ import { PushNotifications } from '@capacitor/push-notifications'
 import questionMark from '../assets/question-mark.jpg'
 import homeCardLinkBg from '../assets/home-card-link-bg.png'
 
-import rightArrow from '../assets/arrow.svg'
-import megaphoneIcon from '../assets/icons8-megaphone-100.png'
+import { 
+  Megaphone as megaphoneIcon,
+  ChevronRight as rightArrow
+} from '@lucide/vue'
 
 import graNocna from '../assets/gra nocna.png'
 import ItemBox from '../components/ItemBox.vue'
-import tinderIcon from '../assets/icons8-tinder-100.png'
+import { Flame as tinderIcon } from '@lucide/vue'
 import beerRealLogo from  '../assets/bEERreal1.png'
 
 import { IonPage, IonContent, IonRefresher, IonRefresherContent } from '@ionic/vue';
@@ -54,7 +56,7 @@ import BerealAlert from '../views/bereal/components/BerealAlert.vue'
           <RouterLink to="/zapisy-gra-nocna">
             <div class="image_link_container">
               <img :src="graNocna" class="image_link" />
-              <img :src="rightArrow" class="image_link_arrow" />
+              <component :is="rightArrow" class="image_link_arrow" />
             </div>
           </RouterLink>
         </div>
@@ -65,7 +67,7 @@ import BerealAlert from '../views/bereal/components/BerealAlert.vue'
           <RouterLink to="/zapisy">
             <div class="image_link_container">
               <img :src="homeCardLinkBg" class="image_link" />
-              <img :src="rightArrow" class="image_link_arrow" />
+              <component :is="rightArrow" class="image_link_arrow" />
             </div>
           </RouterLink>
         </div>
@@ -113,31 +115,29 @@ import BerealAlert from '../views/bereal/components/BerealAlert.vue'
               <RouterLink v-if="data.url && data.url.startsWith('/')" :to="data.url">
                 <div class="image_link_container" v-if="data.image">
                   <img :src="data.image" class="image_link" />
-                  <img :src="rightArrow" class="image_link_arrow" v-if="data.url" />
+                  <component :is="rightArrow" class="image_link_arrow" v-if="data.url" />
                 </div>
                 <ItemBox v-else-if="data.name && data.icon" :bigText="data.name" :rightIcon="data.url ? rightArrow : ''"
-                  :leftIcon="data.icon" />
+                  :leftIcon="data.icon"/>
                 <div class="image_link_container" v-else-if="data.name">
                   <img :src="homeCardLinkBg" class="image_link" style="max-height: 180px;" />
-                  <img :src="rightArrow" class="image_link_arrow dark_filter" v-if="data.url" />
+                  <component :is="rightArrow" class="image_link_arrow dark_filter" v-if="data.url" />
                   <p class="image_link_text" :style="{ 'font-size': data.font_size }">{{ data.name }}</p>
                 </div>
               </RouterLink>
               <a v-else :href="data.url" target="_blank">
                 <div class="image_link_container" v-if="data.image">
                   <img :src="data.image" class="image_link" />
-                  <img :src="rightArrow" class="image_link_arrow" v-if="data.url" />
+                  <component :is="rightArrow" class="image_link_arrow" v-if="data.url" />
                 </div>
                 <ItemBox v-if="data.name && data.icon" :bigText="data.name" :rightIcon="data.url ? rightArrow : ''"
                   :leftIcon="data.icon" />
                 <div class="image_link_container" v-else-if="data.name">
                   <img :src="homeCardLinkBg" class="image_link" style="max-height: 180px;" />
-                  <img :src="rightArrow" class="image_link_arrow dark_filter" v-if="data.url" />
+                  <component :is="rightArrow" class="image_link_arrow dark_filter" v-if="data.url" />
                   <p class="image_link_text" :style="{ 'font-size': data.font_size }">{{ data.name }}</p>
                 </div>
               </a>
-
-
             </span>
 
 

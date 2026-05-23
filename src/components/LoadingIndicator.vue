@@ -1,11 +1,11 @@
 <script setup>
-import alcohol1 from "@/assets/icons8-beer_bottle.png";
-import alcohol2 from "@/assets/icons8-cocktail.png";
-import alcohol3 from "@/assets/icons8-white_wine.png";
-import alcohol4 from "@/assets/icons8-wine_bottle.png";
-import alcohol5 from "@/assets/icons8-vodka.png";
-import alcohol6 from "@/assets/icons8-the_toast.png";
-import alcohol7 from "@/assets/icons8-beer.png";
+import { 
+  BottleWine as alcohol1,
+  Martini as alcohol2,
+  Wine as alcohol3,
+  Beer as alcohol4,
+  GlassWater as alcohol5
+} from "@lucide/vue";
 
 defineProps({
   inline: {
@@ -26,7 +26,7 @@ defineProps({
         class="loading_indicator__spinner"
         :class="{ loading_indicator__spinner_small: small }"
       ></div>
-      <img class="alcohol" :src="alcoholSrc" alt="alcohol" v-if="!small"/>
+      <component v-if="alcoholSrc && !small" class="alcohol" :is="alcoholSrc" aria-label="alcohol"/>
     </div>
   </div>
 </template>
@@ -44,9 +44,7 @@ export default {
       alcohol2,
       alcohol3,
       alcohol4,
-      alcohol5,
-      alcohol6,
-      alcohol7
+      alcohol5
     ];
     const random = Math.floor(Math.random() * alcohols.length);
     this.alcoholSrc = alcohols[random];
@@ -64,10 +62,11 @@ export default {
   z-index: 300;
 }
 .alcohol {
-  width: 35px;
+  width: 36px;
+  height: 36px;
   position: absolute;
-  top: calc(50% - 16.5px);
-  left: calc(50% - 16.5px);
+  top: calc(50% - 18px);
+  left: calc(50% - 18px);
   opacity: 0.5;
 }
 

@@ -1,10 +1,11 @@
 <script setup>
 
-import domekIcon from '../assets/icons8-exterior.png'
+import { 
+    house as domekIcon,
+    ChevronRight as rightArrow
+} from '@lucide/vue';
 
 import moment from 'moment'
-
-import rightArrow from '../assets/arrow.svg'
 
 import { useApiDataStore } from '../stores/api.js'
 import { mapStores } from 'pinia'
@@ -24,7 +25,7 @@ defineProps({
 <template>
     <div class="house-item">
         <div class="header">
-            <img :src="domekIcon" alt="domek" />
+            <component :is="domekIcon" v-if="domekIcon" alt="domek"/>
             <div>
                 <p class="name">{{ apiDataStore.houseSignupsInfo.ready &&
                     apiDataStore.houseSignupsInfo.data.room_instead_of_house ? 'Pokój' : 'Domek' }} nr {{ house.name }}
@@ -36,7 +37,7 @@ defineProps({
         <p class="places">Wolne miejsca: <span class="places-count">{{ house.places - house.locators }}/{{ house.places
                 }}</span></p>
 
-        <img v-if="!noArrow" :src="rightArrow" class="link_arrow" />
+        <component v-if="!noArrow" :is="rightArrow" class="link_arrow" />
 
         <div v-if="house.description" class="description">
             <p>{{ house.description }}</p>

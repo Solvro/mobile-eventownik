@@ -36,6 +36,7 @@
     "@ionic/storage": "^4.0.0",
     "@ionic/vue": "^8.8.3",
     "@ionic/vue-router": "^8.8.3",
+    "@lucide/vue": "^1.16.0",
     "dotenv": "^16.4.5",
     "firebase": "^10.12.2",
     "moment": "^2.29.4",

@@ -2,18 +2,19 @@
 import TopBar from '../components/navigation/TopBar.vue'
 import MenuCard from './MenuCard.vue'
 
-import SosIcon from '../assets/icons8-sos.png'
-import MapIcon from '../assets/icons8-map_marker.png'
-import HammerIcon from '../assets/warsztaty.svg'
-import ScannerIcon from '../assets/icons8-barcode_reader.png'
-import GroupIcon from '../assets/grupa.svg'
-import FractionIcon from '../assets/icons8-meeting_room.png'
-import PointsIcon from '../assets/icons8-scoreboard.png'
-import RankingIcon from '../assets/icons8-leaderboard.png'
-import AddPointsIcon from '../assets/icons8-timezone_+10.png'
-import AnnouncementIcon from '../assets/icons8-megaphone-100.png'
-import BusIcon from '../assets/icons8-bus.png'
-
+import { 
+  LifeBuoy as SosIcon,
+  Map as MapIcon,
+  Hammer as HammerIcon,
+  ScanQrCode as ScannerIcon,
+  CirclePlus as PointsIcon,
+  Shapes as RankingIcon, // ??
+  Megaphone as AnnouncementIcon,
+  Bus as BusIcon,
+  Users as GroupIcon,
+  Boxes as FractionIcon,
+  ClipboardPlus as AddPointsIcon
+ } from '@lucide/vue'
 
 import { useApiDataStore } from '../stores/api.js'
 import { mapStores } from 'pinia'

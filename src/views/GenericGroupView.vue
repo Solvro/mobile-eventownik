@@ -6,10 +6,13 @@ import TextBox from '../components/TextBox.vue'
 
 import OverlayView from '../components/OverlayView.vue'
 
-import rightArrow from '../assets/arrow.svg'
+// ??
 import messangerIcon from '../assets/icons8-facebook_messenger.png'
-import phoneIcon from '../assets/phone_icon.svg'
-import mapIcon from '../assets/icons8-map_marker.png'
+import { 
+  Phone as phoneIcon,
+   Map as mapIcon,
+   ChevronRight as rightArrow
+} from '@lucide/vue'
 import { IonPage, IonContent } from '@ionic/vue';
 
 import SavePhotoButton from '@/components/SavePhotoButton.vue'

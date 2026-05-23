@@ -12,7 +12,7 @@ import { mapStores } from 'pinia'
 import { apiRequest } from '../stores/functions.js'
 
 import questionMark from '../assets/question-mark.jpg'
-import phoneIcon from '../assets/phone_icon.svg'
+import { Phone as phoneIcon } from '@lucide/vue'
 import { IonPage, IonContent } from '@ionic/vue';
 </script>
 

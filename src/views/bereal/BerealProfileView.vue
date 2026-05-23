@@ -1,16 +1,14 @@
 <script setup>
 
-import { IonPage, IonContent, IonIcon, IonButton, toastController, IonNavLink } from '@ionic/vue';
+import { IonPage, IonContent, IonButton, toastController, IonNavLink } from '@ionic/vue';
 import { apiRequest } from '@/stores/functions'
 import TopBar from '@/components/navigation/TopBar.vue'
 
 import { useApiDataStore } from '@/stores/api.js'
 import { mapStores } from 'pinia'
 
-import RefreshIcon from '../../assets/icons8-refresh.png';
+import { RefreshCw as RefreshIcon, CircleUserRound } from '@lucide/vue';
 import { Camera, CameraResultType } from '@capacitor/camera';
-
-import { personCircle } from 'ionicons/icons';
 </script>
 
 <template>
@@ -23,9 +21,10 @@ import { personCircle } from 'ionicons/icons';
                 <div class="padding-main">
                     <div class="profile-header" v-if="apiDataStore.berealProfile.data">
                         <div class="profile-photo-container">
-                            <img :src="apiDataStore.berealProfile.data.user.photo || personCircle" class="profile-photo" />
+                            <img v-if="apiDataStore.berealProfile.data.user.photo" :src="apiDataStore.berealProfile.data.user.photo" class="profile-photo" />
+                            <component v-else :is="CircleUserRound" class="profile-photo" />
                                 <div v-if="isOwnProfile" class="edit-icon" @click="changePhoto">
-                                    <img :src="RefreshIcon" alt="Edit Profile" />
+                                    <component :is="RefreshIcon" aria-label="Edit Profile" />
                                 </div>
 
                         </div>

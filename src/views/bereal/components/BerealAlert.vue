@@ -2,7 +2,7 @@
 import { ref, computed, watch, onBeforeUnmount, onMounted, toRefs } from 'vue'
 import { IonNavLink } from '@ionic/vue'
 import ItemBox from '../../../components/ItemBox.vue'
-import CameraIcon from '../../../assets/icons8-camera-100.png';
+import { Camera as CameraIcon } from '@lucide/vue';
 import { useRouter } from 'vue-router'
 import { IonButton } from '@ionic/vue'
 

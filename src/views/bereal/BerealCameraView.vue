@@ -3,7 +3,7 @@ import { IonPage, IonContent, IonNavLink, IonButton, onIonViewWillEnter, onIonVi
 import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useBerealPostStore } from '@/stores/berealPost.js';
-import CancelIcon from '../../assets/icons8-cancel.png';
+import { CircleX as CancelIcon } from '@lucide/vue';
 import { CameraPreview } from '@capacitor-community/camera-preview';
 import { ScreenOrientation } from '@capacitor/screen-orientation';
 
@@ -184,7 +184,7 @@ onIonViewDidLeave(() => {
         <div id="camera-button" @click="capture" :class="{ disabled: !isLandscape && !ignoreOrientationWarning }"></div>
                 </div>
                 <IonNavLink router-link="/bereal/home/" router-direction="back" class="link">
-                    <img :src="CancelIcon" class="cancel-button" />
+                    <component :is="CancelIcon" class="cancel-button" />
                 </IonNavLink>
             </div>
         </ion-content>

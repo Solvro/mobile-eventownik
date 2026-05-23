@@ -1,13 +1,13 @@
 <script setup>
-import HeartIcon from '../../../assets/heart-icon.png';
-import RedHeartIcon from '../../../assets/heart-icon-red.png';
-import EnlargeIcon from '../../../assets/enlarge-icon.png';
-import DotsIcon from '../../../assets/icons8-dots-90.png';
+import { 
+    Ellipsis as DotsIcon,
+    Expand as EnlargeIcon,
+    Heart as HeartIcon,
+    CircleUserRound
+} from '@lucide/vue';
 import { toastController, IonActionSheet } from '@ionic/vue';
 import { apiRequest } from '@/stores/functions';
 import { alertController, IonNavLink } from '@ionic/vue';
-
-import { personCircle } from 'ionicons/icons';
 
 defineProps({
     photo1: String,
@@ -30,17 +30,18 @@ defineProps({
             <div class="bereal-photo__bottom_bar">
                 <div class="bereal-photo__actions">
                     <div v-if="_num_likes >= 0" class="bereal-photo__like" @click="like_or_unlike">
-                        <img v-if="_liked" :src="RedHeartIcon" class="heart-icon heart-icon-liked" />
-                        <img v-else :src="HeartIcon" class="heart-icon" />
+                        <component v-if="_liked" :is="HeartIcon" class="heart-icon heart-icon-liked" />
+                        <component v-else :is="HeartIcon" class="heart-icon" />
                         <span v-if="_num_likes > 0">{{ _num_likes }}</span>
                     </div>
                     <div class="bereal-photo__enlarge" @click="enlargePhoto">
-                        <img :src="EnlargeIcon" class="enlarge-icon" />
+                        <component :is="EnlargeIcon" class="enlarge-icon" />
                     </div>
                 </div>
                 <ion-nav-link :router-link="user_id ? `/bereal/profil/${user_id}` : null" class="bereal-photo__user-info">
                     <span class="user-name">{{ user_name }}</span>
-                    <img :src="user_profile_photo || personCircle" class="user-profile-photo" />
+                    <img v-if="user_profile_photo" :src="user_profile_photo" class="user-profile-photo" />
+                    <component v-else :is="CircleUserRound" class="user-profile-photo"/>
                 </ion-nav-link>
             </div>
             <div class="bereal-photo__additional-photo" @click="swapPhotos"
@@ -50,7 +51,7 @@ defineProps({
                 LATE
             </div>
             <div class="bereal-photo__options" v-if="!hide_options">
-                <img :src="DotsIcon" :id="`open-action-sheet-${id}-${random_id}`" />
+                <component :is="DotsIcon" :id="`open-action-sheet-${id}-${random_id}`" />
                 <ion-action-sheet :trigger="`open-action-sheet-${id}-${random_id}`" :buttons="actionSheetButtons"></ion-action-sheet>
             </div>
         </div>
@@ -251,6 +252,7 @@ export default {
 }
 .user-profile-photo {
     height: 90%;
+    width: 90%;
     aspect-ratio: 1/1;
     border-radius: 50%;
     object-fit: cover;
@@ -280,8 +282,12 @@ export default {
     height: 25px;
     margin-right: 5px;
 }
-.heart-icon:not(.heart-icon-liked) {
+/* .heart-icon:not(.heart-icon-liked) {
     filter: invert(100%);
+} */
+.heart-icon-liked {
+    color: red;
+    fill: red;
 }
 .bereal-photo__like {
     display: flex;

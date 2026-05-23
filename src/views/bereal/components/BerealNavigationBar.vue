@@ -1,8 +1,9 @@
 <script setup>
-import BackIcon from '../../../assets/icons8-back-100.png'
+import { 
+  ChevronLeft as BackIcon,
+  CircleUserRound as ProfileIcon
+} from '@lucide/vue'
 import Logo from '../../../assets/bEERreal1.png'
-import ProfileIcon from '../../../assets/icons8-male_user.png'
-
 
 import { useApiDataStore } from '@/stores/api.js'
 import { mapStores } from 'pinia'
@@ -17,7 +18,7 @@ import { IonNavLink, IonTabBar } from '@ionic/vue'
 
       <IonNavLink router-link="/" router-direction="none">
         <div class="navigation_bar__item">
-          <img :src="BackIcon" />
+          <BackIcon/>
           <p>Wyjdź</p>
         </div>
       </IonNavLink>
@@ -30,7 +31,7 @@ import { IonNavLink, IonTabBar } from '@ionic/vue'
 
       <IonNavLink router-link="/bereal/profil" router-direction="none">
         <div class="navigation_bar__item">
-          <img :src="ProfileIcon" />
+          <ProfileIcon/>
           <p>Profil</p>
         </div>
       </IonNavLink>

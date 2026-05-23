@@ -1,8 +1,8 @@
 <script setup>
 import LoadingIndicator from '@/components/LoadingIndicator.vue';
-import { IonButton, IonIcon } from '@ionic/vue';
-import { createOutline, imageOutline } from 'ionicons/icons';
+import { IonButton } from '@ionic/vue';
 
+import { SquarePenIcon, Image } from '@lucide/vue';
 import { useApiDataStore } from '@/stores/api.js'
 import { mapStores } from 'pinia'
 
@@ -26,7 +26,7 @@ defineProps({
                 <div v-if="editable">
                     <div class="edit-button edit-photo">
                         <IonButton @click="addPhoto" fill="clear">
-                            <ion-icon slot="icon-only" :icon="imageOutline"></ion-icon>
+                            <Image color="white"/>
                         </IonButton>
                     </div>
                 </div>
@@ -37,7 +37,7 @@ defineProps({
 
                     <IonButton @click="editDescription" fill="clear" size="small" class="edit-description"
                         v-if="editable">
-                        <ion-icon slot="icon-only" :icon="createOutline"></ion-icon>
+                        <SquarePenIcon  color="white"/>
                     </IonButton>
                 </h2>
                 <p>{{ item.description }}</p>
