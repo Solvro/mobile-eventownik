@@ -6,12 +6,11 @@ import TextBox from '../components/TextBox.vue'
 
 import OverlayView from '../components/OverlayView.vue'
 
-// ??
-import messangerIcon from '../assets/icons8-facebook_messenger.png'
 import { 
   Phone as phoneIcon,
    Map as mapIcon,
-   ChevronRight as rightArrow
+   ChevronRight as rightArrow,
+   MessageCircleMore as messengerIcon
 } from '@lucide/vue'
 import { IonPage, IonContent } from '@ionic/vue';
 
@@ -82,7 +81,7 @@ defineProps([
           </OverlayView>
 
           <a v-if="group.messenger" :href="group.messenger" target="_blank">
-            <ItemBox :bigText="messengerDescription" :leftIcon="messangerIcon" :rightIcon="rightArrow" />
+            <ItemBox :bigText="messengerDescription" :leftIcon="messengerIcon" :rightIcon="rightArrow" />
           </a>
 
           <div v-if="ready && group.wardens && group.wardens.length">
