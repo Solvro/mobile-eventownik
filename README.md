@@ -27,8 +27,8 @@
 1. **Sklonuj repozytorium**
 
    ```bash
-   git clone <REPO_URL>
-   cd oboz_studentow_pwr_frontend
+   git clone https://github.com/Solvro/mobile-eventownik.git
+   cd mobile-eventownik
    ```
 
 2. **Zainstaluj zależności**
