@@ -1,4 +1,4 @@
-# <img src="https://github.com/Solvro/web-testownik/blob/main/public/favicon/180x180.png?raw=true" width="24"> Eventownik Mobile Legacy
+# <img src="https://github.com/Solvro/web-testownik/blob/main/public/favicon/180x180.png?raw=true" width="24"> Eventownik Solvro – Mobile Legacy
 
 > [!WARNING]
 > To repozytorium zawiera starą wersję aplikacji. Nowa wersja aplikacji rozwijana jest w repozytorium [mobile-eventownik-v2](https://github.com/Solvro/mobile-eventownik-v2).
