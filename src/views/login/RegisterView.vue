@@ -17,7 +17,7 @@ import { Keyboard } from '@capacitor/keyboard';
 
                     <h1>Zaloguj się</h1>
                     <p class="info">
-                        Podaj adres e-mail, który podałeś/aś podczas rejestracji na obóz.
+                        Podaj adres e-mail, który podałeś/aś podczas rejestracji na wydarzenie.
                     </p>
 
                     <p v-if="error" class="errors">

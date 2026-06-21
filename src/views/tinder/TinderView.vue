@@ -48,7 +48,7 @@ import ChatCardView from '@/views/ChatCardView.vue'
                                         natychmiastowego czatowania nawet
                                         jeżeli nie masz matcha z
                                         drugą osobą.</p>
-                                    <p class="subdesctiprion">UWAGA! Super like możesz użyć raz na cały obóz. Use it
+                                    <p class="subdesctiprion">UWAGA! Super like możesz użyć raz na całe wydarzenie. Use it
                                         wisely.</p>
                                 </div>
                             </div>
