@@ -75,6 +75,23 @@
 | `npm install`      | Instaluje wszystkie wymagane zależności projektu      |
 | `npx cypress open` | Otwiera okno uruchomieniowe testów end-to-end Cypress |
 
+## Struktura projektu
+
+- **src/** – Główny katalog źródłowy aplikacji.
+  - **assets/** – Zasoby statyczne, takie jak style CSS i obrazy.
+    - `main.css` – Główne style aplikacji.
+    - `variables.css` – Zmienne CSS motywu.
+  - **components/** – Komponenty Vue używane w aplikacji.
+    - `ExampleComponent.vue` – Przykładowy komponent.
+  - **router/** – Konfiguracja routingu aplikacji.
+    - `index.js` – Definicje ścieżek aplikacji.
+  - **store/** – Zarządzanie stanem aplikacji (Pinia).
+  - **App.vue** – Główny komponent aplikacji.
+  - **main.js** – Punkt wejściowy aplikacji.
+- **public/** – Pliki publiczne dostępne bezpośrednio (np. `index.html`).
+- **package.json** – Plik konfiguracyjny projektu zawierający zależności i skrypty.
+- **vite.config.js** – Konfiguracja Vite.
+
 ## Stack technologiczny
 
 ### Frontend
