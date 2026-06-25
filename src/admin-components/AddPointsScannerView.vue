@@ -149,7 +149,7 @@ textarea {
   width: 100%;
   padding: 10px 35px 10px 15px;
   border-radius: 20px;
-  border: 1px solid var(--text-gray);
+  border: 1px solid var(--muted-foreground);
   margin-bottom: 2px;
   font-size: 15px;
 
@@ -160,13 +160,13 @@ textarea {
   -moz-appearance: none;
   appearance: none;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 }
 
 select {
   background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.66663 5.33337L8.00001 8.66671L11.3333 5.33337' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat;
   background-position: calc(100% - 15px) center !important;
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 }
 
 .button {
@@ -184,7 +184,7 @@ select {
 
   margin: 5px auto 12px;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
 }
 </style>

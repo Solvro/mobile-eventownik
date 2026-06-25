@@ -37,10 +37,9 @@ export default {
   width: calc(33% - 15px);
   height: auto;
   aspect-ratio: 1 / 1;
-  background-color: var(--color-primary);
   border-radius: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 }
 
 .card__icon {

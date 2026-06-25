@@ -15,7 +15,7 @@ defineProps({
   bgColor: {
     type: String,
     required: false,
-    default: 'var(--bg-light-translusent)'
+    default: 'var(--primary)'
   },
   leftIcon: {
     type: [Object, String, Function],
@@ -101,7 +101,7 @@ h5 {
   padding: 1px;
   font-size: 17px;
   line-height: 19px !important;
-  color: var(--light-text);
+  color: var(--primary-foreground);
 }
 
 h6 {
@@ -109,7 +109,7 @@ h6 {
   padding: 1px;
   font-size: 12px;
   line-height: 13px !important;
-  color: var(--light-text);
+  color: var(--primary-foreground);
 }
 
 
@@ -118,7 +118,7 @@ p {
   padding: 1px;
   font-size: 11px;
   line-height: 11px !important;
-  color: var(--light-text);
+  color: var(--primary-foreground);
 }
 
 .white-icon {

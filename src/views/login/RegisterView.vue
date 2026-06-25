@@ -101,12 +101,11 @@ main {
     flex-direction: column;
     height: 100%;
     padding: 0 20px;
-    /* background: var(--bg-gradient); */
 }
 
 .button {
     background: var(--login-button-bg);
-    color: var(--login-button-color);
+    color: var(--primary-foreground);
 
 
     font-size: 15px;
@@ -135,12 +134,12 @@ input {
     background-color: var(--login-button-bg);
     border: 1px solid var(--login-button-bg);
     font-size: 12px;
-    color: var(--login-button-color);
+    color: var(--foreground);
     font-weight: 600;
 
 
 
-    /* background: var(--radial-gradient); */
+    /* background: var(white); */
     /* -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   background-clip: text; */
@@ -153,15 +152,15 @@ input {
 /* input selected */
 input:focus {
     outline: none;
-    /* border: 1px solid var(--theme-light); */
+    /* border: 1px solid var(--primary-foreground); */
 }
 
 input::selection {
-    background: var(--text-selection)
+    background: var(--foreground-selection)
 }
 
 input::placeholder {
-    color: var(--text-gray);
+    color: var(--muted-foreground);
 }
 
 #logo {
@@ -194,7 +193,7 @@ form {
 
 .small-link {
     font-size: 10px;
-    color: var(--text-gray);
+    color: var(--muted-foreground);
     font-weight: 600;
     text-decoration: none;
     padding: 10px;
@@ -211,7 +210,7 @@ form {
 
 .info {
     font-size: 14px;
-    color: var(--theme-text);
+    color: var(--muted-foreground);
     font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
@@ -219,7 +218,7 @@ form {
 
 h1 {
     font-size: 28px;
-    color: var(--theme-light);
+    color: var(--foreground);
     font-weight: 600;
     margin-bottom: 20px !important;
     text-align: center;

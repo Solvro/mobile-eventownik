@@ -219,7 +219,7 @@ onMounted(async () => {
 .bingo-cell {
   width: calc((min(400px, 95vw) - 32px) / 5);
   height: calc((min(400px, 95vw) - 32px) / 5);
-  background: var(--bg-light);
+  background: var(--primary);
   border-radius: 8px;
   border: 2px solid transparent;
   display: flex;
@@ -233,7 +233,7 @@ onMounted(async () => {
   transition: box-shadow 0.2s;
 }
 .bingo-cell--filled {
-  background: var(--bg-lighter);
+  background: var(--primary);
 }
 .bingo-cell--pending {
   border-color: #FFA726;
@@ -263,8 +263,8 @@ onMounted(async () => {
 }
 .bingo-modal-content {
   width: 100%;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--background-color);
+  color: var(--foreground);
   padding: 16px;
   border-radius: 8px;
   display: flex;
@@ -302,7 +302,7 @@ onMounted(async () => {
 }
 .or-divider {
   margin: 8px 0;
-  color: var(--text-gray);
+  color: var(--muted-foreground);
   width: 100%;
   text-align: center;
 }
@@ -327,7 +327,7 @@ onMounted(async () => {
   cursor: pointer;
 }
 .status-message {
-  color: var(--text-gray);
+  color: var(--muted-foreground);
   font-size: 14px;
 }
 .bingo-legend {
@@ -344,8 +344,8 @@ onMounted(async () => {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: var(--text-gray);
-  background: var(--bg-light);
+  color: var(--muted-foreground);
+  background: var(--primary);
   padding: 6px 12px;
   border-radius: 16px;
 }
@@ -370,7 +370,7 @@ onMounted(async () => {
 .close-btn {
   background: none;
   border: none;
-  color: var(--text);
+  color: var(--foreground);
   cursor: pointer;
   font-size: 14px;
   margin-top: 12px;

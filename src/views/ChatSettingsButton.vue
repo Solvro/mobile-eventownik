@@ -156,7 +156,7 @@ export default {
 
 <style scoped>
 .infoButton {
-    color: var(--text-dark);
+    color: var(--foreground);
 }
 
 .padding {
@@ -171,7 +171,7 @@ export default {
 
 .description {
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: var(--foreground-light);
 }
 
 ion-button {

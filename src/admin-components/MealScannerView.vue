@@ -209,11 +209,11 @@ export default {
   margin-bottom: 12px;
   margin-top: 12px;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 }
 
 .result {
-  background-color: var(--bg-light);
+  background-color: var(--primary);
   width: 95%;
   min-height: 100px;
   padding: 10px 20px;
@@ -260,7 +260,7 @@ export default {
   padding-bottom: 20px;
   margin: 20px auto;
   width: 95%;
-  background: var(--bg-lighter);
+  background: var(--primary);
   border-radius: 28px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -278,7 +278,7 @@ button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg);
+  background-color: var(--background-color);
 
   width: 130px;
   display: flex;

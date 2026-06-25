@@ -9,7 +9,7 @@ moment.locale('pl')
 </script>
 
 <template>
-  <ion-app>
+  <ion-app class="dark">
     <ion-router-outlet class="page" />
   </ion-app>
 </template>

@@ -429,7 +429,7 @@ h3 {
   padding-bottom: 20px;
   margin: 20px auto;
   width: 95%;
-  background: var(--bg-lighter);
+  background: var(--primary);
   border-radius: 28px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -446,7 +446,7 @@ button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg);
+  background-color: var(--background-color);
 
   width: 130px;
   display: flex;
@@ -502,7 +502,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--theme-text);
+  color: var(--muted-foreground);
   font-size: 30px;
   font-weight: bold;
   padding: 0 25px;
@@ -530,7 +530,7 @@ button {
   flex-direction: column;
   margin: 30px 10px;
 
-  background: var(--bg);
+  background: var(--background-color);
   padding: 10px 10px 30px;
   border-radius: 20px;
 }
@@ -545,7 +545,7 @@ a.button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
   width: auto;
   display: inline-block;

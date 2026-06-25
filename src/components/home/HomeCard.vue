@@ -104,11 +104,11 @@ defineProps({
   width: 100%;
   height: 100%;
   border-radius: 20px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.08%, var(--bg-lighter) 72%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.08%, var(--primary) 72%);
 }
 
 .card.wide .overlay {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.08%, var(--bg-lighter) 72%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.08%, var(--primary) 72%);
 }
 
 .description {
@@ -142,7 +142,7 @@ defineProps({
 .description h2 {
   font-size: 12px !important;
   line-height: 12px !important;
-  color: var(--text-gray);
+  color: color-mix(in hsl, white, var(--muted-foreground));
   display: flex;
   align-items: center;
   gap: 5px;
@@ -170,7 +170,7 @@ defineProps({
   font-size: 13px !important;
   line-height: 13px !important;
   padding: 5px 0 0;
-  color: var(--text-gray);
+  color: var(--muted-foreground);
 }
 
 .description .icon {

@@ -66,7 +66,7 @@ function goBack() {
 }
 
 h1 {
-  background: var(--radial-gradient);
+  background: var(--foreground);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -99,7 +99,7 @@ h1 {
 .arrow {
   border: solid black;
   border-width: 0 4px 4px 0;
-  border-image: var(--radial-gradient) 1;
+  border-image: var(white) 1;
   display: inline-block;
   padding: 7px;
   margin-left: 4px;

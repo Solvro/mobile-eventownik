@@ -84,8 +84,8 @@ export default {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 5px solid var(--text-gray);
-  border-top-color: var(--text);
+  border: 5px solid var(--muted-foreground);
+  border-top-color: var(--foreground);
   animation: spin 0.5s linear infinite;
 
 }
@@ -93,8 +93,8 @@ export default {
 .loading_indicator__spinner_small {
   width: 16px;
   height: 16px;
-  border: 2px solid var(--text-gray);
-  border-top-color: var(--text);
+  border: 2px solid var(--muted-foreground);
+  border-top-color: var(--foreground);
 }
 
 @keyframes spin {

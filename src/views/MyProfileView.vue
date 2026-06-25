@@ -219,7 +219,7 @@ export default {
 .credits {
   margin-top: 20px;
   font-size: 10px;
-  color: var(--light-text);
+  color: var(--foreground);
   text-align: center;
 }
 
@@ -229,24 +229,27 @@ export default {
 
 h5 {
   font-size: 11px;
-  color: var(--light-text);
+  color: var(--foreground);
   padding: 0 0 8px;
   margin-top: -10px;
 }
 
 h6 {
   font-size: 10px;
-  color: var(--light-text);
+  color: var(--foreground);
   text-align: center;
 }
 
 .version {
   font-size: 10px;
-  color: var(--light-text);
+  color: var(--foreground);
   text-align: center;
   margin-bottom: -17px;
 }
 
+p a {
+  color: var(--foreground) !important;
+}
 
 .zindex {
   z-index: 1;
@@ -406,8 +409,8 @@ span {
   height: var(--border-width);
   background: linear-gradient(90deg,
       transparent 30%,
-      var(--theme-text),
-      var(--theme-text));
+      var(--muted-foreground),
+      var(--muted-foreground));
 }
 
 .bottom {
@@ -415,8 +418,8 @@ span {
   bottom: 0;
   height: var(--border-width);
   background: linear-gradient(90deg,
-      var(--theme-text),
-      var(--theme-text),
+      var(--muted-foreground),
+      var(--muted-foreground),
       transparent 70%);
 }
 
@@ -427,8 +430,8 @@ span {
   height: 0;
   background: linear-gradient(180deg,
       transparent 30%,
-      var(--theme-text),
-      var(--theme-text));
+      var(--muted-foreground),
+      var(--muted-foreground));
 }
 
 .left {
@@ -437,8 +440,8 @@ span {
   width: var(--border-width);
   height: 0;
   background: linear-gradient(180deg,
-      var(--theme-text),
-      var(--theme-text),
+      var(--muted-foreground),
+      var(--muted-foreground),
       transparent 70%);
 }
 

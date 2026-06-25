@@ -98,7 +98,7 @@ button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
   width: 130px;
   display: flex;

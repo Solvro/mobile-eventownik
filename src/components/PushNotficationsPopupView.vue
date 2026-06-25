@@ -57,7 +57,7 @@ export default {
   flex-direction: column;
   /* margin: 30px 10px; */
 
-  background: var(--bg-lighter);
+  background: var(--primary);
   padding: 20px 10px;
   border-radius: 20px;
 }
@@ -72,7 +72,7 @@ a.button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
   width: 140px;
   display: flex;

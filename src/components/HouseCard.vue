@@ -113,7 +113,7 @@ export default {
     /* width: calc(50% - 10px); */
     height: 100%;
     /* aspect-ratio: 4/3; */
-    background-color: var(--bg-lighter);
+    background-color: var(--primary);
     border-radius: 15px;
     padding: 10px;
     flex-direction: column;
@@ -162,7 +162,7 @@ export default {
 .progress-bar {
     width: 100%;
     height: 20px;
-    background-color: var(--bg-light);
+    background-color: var(--primary);
     border-radius: 10px;
     margin-top: 10px;
     overflow: hidden;
@@ -171,7 +171,7 @@ export default {
 
 .progress {
     height: 100%;
-    background-color: var(--bg-light-translusent);
+    background-color: var(--primary);
     border-radius: 10px;
     position: absolute;
     top: 0;

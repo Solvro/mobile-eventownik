@@ -155,11 +155,11 @@ export default {
 }
 
 .info-screen p {
-    color: var(--text-gray);
+    color: var(--muted-foreground);
 }
 
 .info-screen p a {
-    color: var(--theme-dark)
+    color: var(--foreground)
 }
 
 button {
@@ -171,7 +171,7 @@ button {
     line-height: 16px;
     cursor: pointer;
 
-    background-color: var(--bg-light);
+    background-color: var(--primary);
 
     width: 160px;
     display: flex;

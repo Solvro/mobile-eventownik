@@ -168,13 +168,13 @@ export default {
   width: 50%;
   padding: 20px;
   border-radius: 20px;
-  border: 1px solid var(--color-border);
+  border: 1px solid black;
   margin-top: 10px;
   margin-bottom: 20px;
   text-align: center;
   font-size: 20px;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
   color: white;
   outline: none;
 }
@@ -214,7 +214,7 @@ export default {
 
   margin-bottom: 12px;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 }
 
 .success {

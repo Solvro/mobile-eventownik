@@ -116,7 +116,7 @@ onMounted(fetchInstances);
 }
 
 .bingo-submission {
-  background: var(--bg-light);
+  background: var(--primary);
   border-radius: 12px;
   padding: 16px;
 }
@@ -134,7 +134,7 @@ onMounted(fetchInstances);
 }
 
 .submission-date {
-  color: var(--text-gray);
+  color: var(--muted-foreground);
   font-size: 14px;
 }
 
@@ -155,7 +155,7 @@ onMounted(fetchInstances);
   height: calc((100vw - 64px) / 5);
   max-width: 80px;
   max-height: 80px;
-  background: var(--bg);
+  background: var(--background-color);
   border-radius: 8px;
   border: 2px solid transparent;
   display: flex;
@@ -211,8 +211,8 @@ button {
 }
 
 .finish-btn {
-  background: var(--bg-lighter);
-  color: var(--text);
+  background: var(--primary);
+  color: var(--foreground);
 }
 
 .preview-modal {
@@ -230,7 +230,7 @@ button {
 }
 
 .preview-content {
-  background: var(--bg);
+  background: var(--background-color);
   padding: 16px;
   border-radius: 12px;
   max-width: 90vw;
@@ -249,7 +249,7 @@ button {
 
 .preview-desc {
   font-size: 14px;
-  color: var(--text);
+  color: var(--foreground);
   text-align: center;
 }
 
@@ -259,8 +259,8 @@ button {
 }
 
 .close-btn {
-  background: var(--bg-lighter);
-  color: var(--text);
+  background: var(--primary);
+  color: var(--foreground);
 }
 
 /* states */

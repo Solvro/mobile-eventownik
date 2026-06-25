@@ -139,12 +139,12 @@ export default {
 .name {
     font-size: 1.6em;
     font-weight: bold;
-    color: var(--light-text);
+    color: var(--primary-foreground);
 }
 .profile-spacer {
     width: 100%;
     height: 3px;
-    background-color: var(--theme-text);
+    background-color: var(--muted-foreground);
 }
 .profile-posts-list {
     width: 100%;

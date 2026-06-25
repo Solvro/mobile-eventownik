@@ -1,62 +1,3 @@
-:root {
-  /* THEME COLORS */
-  --bg-gradient: linear-gradient(180deg, #fd7edb 22.92%, #fd7ed5 22.93%, #f570c6dc 100%);
-  --bg-gradent-translusent: var(--bg-gradient);
-  /* --bg-gradient-translusent: linear-gradient(180deg, rgba(0, 87, 183, 0.478) 22.92%, rgba(0, 87, 183, 0.478) 22.93%, #8B4513AA 100%); */
-  --radial-gradient: radial-gradient(50% 50% at 55.81% 50%, #fd7ed3 0%, #f570c0dc 100%); /* Home/Profil */
-  --radial-gradient-circle: radial-gradient(circle, #fd7ed7 0%, #f570c9dc 80%);
-
-  --app-bg: #1f171d; /*tło aplikacji*/
-
-  --bg: #570446dc; 
-  --bg-translusent: var(--bg);
-  /* --bg-translusent: #8B4513194; */
-  --bg-lighter: #492940; /*harmo cień*/
-  --bg-light: #ac317f; /*menu kafelki*/
-  --bg-light-translusent: #f570c991; /*profil opcje*/
-  /*--bg-light-translusent-hover: rgba(111, 219, 21, 0.177);
-*/
-  --theme-dark: #370022; /* kolor ikon - domyśl sie których */
-  --theme-light: #fd7ed7; /* ZALOGUJ SIE*/
-  --theme-text: #cf7fb4; /* qr efekt + maly tekst an ekranie logowania*/
-  --light-text: #ffffff; /* malutki text */
-  --chatt-color: #d080bf;
-  --send-button: #fd7ed7;
-
-  --text-gray: #efefefb9; /* harmo - miejsce + czaty msg*/
-  --text-dark: #c51a8c; /* Opcje - chatt */
-  --red-dark: #8B0000;
-  --red-action: #dc1212;
-  --red: #6d1111;
-  --orange: #FFA500;
-  --yellow: #FFD700;
-
-  --gray-text-gradient: radial-gradient(50% 50% at 55.81% 50%, #fd7ed1 0%, #f570c6dc 100%); /* harmo data na gorze */
-
-  --login-button-color: #fd7ec4; /*tekst - zaloguj sie*/
-  --login-button-bg: #f570c621; /* przyciski log */
-  
-  --bottom-nav-gradient: linear-gradient(90deg, #d080b0, #fd7ed9, #d080c3);
-
-  --daily-quest-gradient: radial-gradient(farthest-corner at 90% 90%, #fd7ee6 0%, #80A9D0 100%);
-
-/*ion-tab-bar {
-  background: url('@/assets/Molo-final.png') no-repeat center center;
-  background-size: cover;
-  color: white;
-}
-*/
-  --nav-height: 85px
-
-}
-
-:root,
-body {
-  --ion-background-color: transparent !important;
-  --background: transparent;
-  --ion-font-family: "Space Grotesk", "Roboto", "Hervetica Neue", sans-serif;
-}
-
 *,
 *::before,
 *::after {
@@ -71,12 +12,9 @@ body {
 
 body {
   min-height: 100vh;
-  color: white;
-  background: var(--bg);
-  background-image: linear-gradient(var(--bg), var(--bg));
+  color: var(--foreground);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
-
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -105,7 +43,7 @@ body {
 }
 
 h3 {
-  color: var(--light-text);
+  color: var(--card-foreground);
   background-clip: text;
   padding: 5px 2px;
   font-size: 14px !important;
@@ -115,11 +53,6 @@ h3 {
   opacity: 1;
 }
 
-ion-content {
-  /* background: var(--bg-translusent); */
-  background-color:  var(--app-bg); /*tło */
-
-}
 a {
   color: white !important;
 }
@@ -142,6 +75,6 @@ ion-refresher-content {
 
 /* DOLNY PASEK NAWIGACYJNY */
 ion-tab-bar {
-  background: var(--bottom-nav-gradient);
+  background: var(--card);
   color: white;
 }

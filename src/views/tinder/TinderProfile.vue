@@ -122,7 +122,7 @@ export default {
     align-items: center;
     flex-direction: column;
 
-    background: var(--bg);
+    background: var(--background-color);
     padding: 20px 10px;
     border-radius: 20px;
     margin: 20px;
@@ -143,7 +143,7 @@ ion-textarea {
     --padding-end: 10px;
     --padding-top: 10px;
     --padding-bottom: 10px;
-    --background: var(--bg-lighter);
+    --background: var(--primary);
     --border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -171,7 +171,7 @@ h4 {
 .onboarding h4 {
     margin: 0;
     margin-bottom: 20px;
-    color: var(--light-text);
+    color: var(--primary-foreground);
 }
 
 .onboarding h5 {

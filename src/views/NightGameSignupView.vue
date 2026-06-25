@@ -274,11 +274,11 @@ textarea {
     -moz-appearance: none;
     appearance: none;
 
-    background-color: var(--bg-light);
+    background-color: var(--primary);
 }
 
 input::placeholder {
-    color: var(--text-gray);
+    color: var(--muted-foreground);
 }
 
 .bandInput {
@@ -308,7 +308,7 @@ button {
     line-height: 16px;
     cursor: pointer;
 
-    background-color: var(--bg-light);
+    background-color: var(--primary);
 
     width: 160px;
     display: flex;
@@ -339,11 +339,11 @@ button.success {
 }
 
 .info-screen p {
-    color: var(--text-gray);
+    color: var(--muted-foreground);
 }
 
 .info-screen p a {
-    color: var(--theme-dark)
+    color: var(--foreground)
 }
 
 .bold {

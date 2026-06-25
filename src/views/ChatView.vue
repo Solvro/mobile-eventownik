@@ -29,7 +29,7 @@ import { nextTick } from 'vue'
         <ion-content :fullscreen="false" ref="content" @ionScroll="handleScroll($event)" :scrollEvents="true">
             <div>
                 <TopBar :title="apiDataStore.chats.ready && chat && chat.name || 'Czat ?'" autoBackLink class="top-bar"
-                    :image="apiDataStore.chats.ready && chat ? chat.avatar : ''" background="var(--app-bg)">
+                    :image="apiDataStore.chats.ready && chat ? chat.avatar : ''" background="var(--background)">
                     <ChatSettingsButton :chat="chat" />
                 </TopBar>
                 <main class="padding-main">
@@ -383,7 +383,7 @@ export default {
 }
 
 .messageFromMe .message {
-    background-color: var(--chatt-color);
+    background-color: var(--chat-color);
     border-radius: 20px 20px 5px 20px;
     margin: 2px;
     margin-left: 35px;
@@ -429,7 +429,7 @@ export default {
     width: 30px;
     height: 30px;
     object-fit: contain;
-    background-color: var(--theme-dark);
+    background-color: var(--foreground);
     border-radius: 50%;
     padding: 4px;
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.4);
@@ -458,7 +458,7 @@ export default {
 
     padding: 10px 15px 10px 15px;
     border-radius: 20px;
-    border: 1px solid var(--text-gray);
+    border: 1px solid var(--muted-foreground);
     font-size: 15px;
 
     border: none;
@@ -469,7 +469,7 @@ export default {
     appearance: none;
     caret-color: white;
 
-    background-color: var(--bg-light);
+    background-color: var(--primary);
 
 }
 
@@ -508,7 +508,7 @@ export default {
 
 .sendIcon img {
     height: 100%;
-    filter: drop-shadow(0px 100px 0 var(--send-button));
+    filter: drop-shadow(0px 100px 0 var(--primary));
     transform: translateY(-100px);
 }
 

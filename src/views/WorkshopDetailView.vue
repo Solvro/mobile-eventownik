@@ -173,7 +173,7 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.08%, var(--bg-lighter) 73.74%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.08%, var(--primary) 73.74%);
 }
 
 .description {
@@ -197,7 +197,7 @@ main {
 .description h2 {
   font-size: 17px;
   line-height: 15px !important;
-  color: var(--text-gray);
+  color: var(--muted-foreground);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -207,7 +207,7 @@ main {
   font-size: 15px;
   line-height: 15px !important;
   padding: 5px 0 0;
-  color: var(--text-gray);
+  color: var(--muted-foreground);
 }
 
 .description .icon {
@@ -218,7 +218,7 @@ main {
 .signupsOpenTime {
   font-size: 12px;
   line-height: 12px !important;
-  color: var(--text-gray);
+  color: var(--muted-foreground);
   margin-top: 5px;
   text-align: center;
 }

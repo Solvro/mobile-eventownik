@@ -73,15 +73,15 @@ import ProfileCircle from '../components/navigation/ProfileCircle.vue'
 }
 
 .arrow-circle-left {
-  background: var(--gray-text-gradient);
+  background: var(--muted-foreground);
 }
 
 .arrow-circle-right {
-  background: var(--gray-text-gradient);
+  background: var(--muted-foreground);
 }
 
 .arrow {
-  border: solid var(--bg);
+  border: solid var(--background-color);
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
@@ -107,7 +107,7 @@ import ProfileCircle from '../components/navigation/ProfileCircle.vue'
 }
 
 .day-changer h5 {
-  background: var(--gray-text-gradient);
+  background: var(--muted-foreground);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

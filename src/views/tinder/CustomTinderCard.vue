@@ -163,6 +163,6 @@ ion-icon {
 
 .tinder-card__info p {
     font-size: 16px;
-    color: var(--text-light);
+    color: var(--foreground-light);
 }
 </style>

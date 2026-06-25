@@ -36,7 +36,7 @@ export default {
     position: absolute;
     top: calc(20px + var(--ion-safe-area-top)/2);
     right: 20px;
-    color: var(--bg-light);
+    color: var(--primary);
     z-index: 11;
 }
 

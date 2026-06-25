@@ -95,7 +95,7 @@ export default {
   margin: 0;
   font-size: 11px;
   line-height: 11px;
-  color: var(--text-dark);
+  color: var(--foreground);
 }
 
 .timer h2 {

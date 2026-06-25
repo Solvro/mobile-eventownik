@@ -172,7 +172,7 @@ defineProps([
 }
 
 h1 {
-  background: var(--radial-gradient);
+  background: var(white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -185,15 +185,17 @@ h1 {
   line-height: 25px;
   margin-top: 15px;
   z-index: 1;
+  color: var(--foreground);
 }
 
 .title {
   z-index: 1;
+  color: var(--foreground);
 }
 
 .email {
   font-size: 13px;
-  color: var(--light-text);
+  color: var(--foreground);
   z-index: 1;
 }
 
@@ -229,7 +231,7 @@ button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
   width: 130px;
   display: flex;

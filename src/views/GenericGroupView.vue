@@ -37,7 +37,7 @@ defineProps([
   <ion-page>
     <ion-content :fullscreen="false">
       <main
-        :style="{ background: group && group.background ? ('linear-gradient(#00000080, #00000000), url(' + group.background + '), var(--bg-gradient)') : '' }">
+        :style="{ background: group && group.background ? ('linear-gradient(#00000080, #00000000), url(' + group.background + '), black') : '' }">
         <TopBar :title="title" :backLink="$router.options.history.state.back || backLink">
           <RouterLink v-if="topRightButtonText && topRightButtonUrl" :to="topRightButtonUrl">
             <p class="topRightButton">
@@ -114,14 +114,14 @@ main {
 }
 
 h1 {
-  background: var(--radial-gradient);
+  background: var(white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 h6 {
-  color: var(--text-gray);
+  color: var(--muted-foreground);
   text-align: center;
 }
 
@@ -134,7 +134,7 @@ button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
   width: 130px;
   display: flex;
@@ -183,7 +183,7 @@ button {
 
 .email {
   font-size: 13px;
-  color: var(--text-gray);
+  color: var(--muted-foreground);
 }
 
 .itemBoxContainer {
@@ -219,7 +219,7 @@ button {
   flex-direction: column;
   margin: 30px 10px;
 
-  background: var(--bg);
+  background: var(--background-color);
   padding: 10px 10px 30px;
   border-radius: 20px;
 }
@@ -234,7 +234,7 @@ a.button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
   width: 130px;
   display: flex;
@@ -250,7 +250,7 @@ a.button {
 .topRightButton {
   text-align: right;
   padding: 10px;
-  background: var(--radial-gradient);
+  background: var(white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

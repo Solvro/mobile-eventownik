@@ -254,7 +254,7 @@ export default {
 
 <style scoped>
 .help-overlay {
-    background-color: var(--bg);
+    background-color: var(--background-color);
     border-radius: 10px;
     padding: 20px;
     margin: 0 20px;
@@ -288,7 +288,7 @@ export default {
 
 .subdesctiprion {
     font-size: 12px;
-    color: var(--text-gray);
+    color: var(--muted-foreground);
     font-weight: bold;
 }
 
@@ -303,7 +303,7 @@ body {
 }
 
 h2 {
-    color: var(--text-gray);
+    color: var(--muted-foreground);
     text-align: center;
     margin: 20px;
     margin-top: 40px;
@@ -415,7 +415,7 @@ h2 {
     aspect-ratio: 1;
 
     --background: rgba(0, 0, 0, 0.439);
-    --background-activated: var(--bg-lighter)
+    --background-activated: var(--primary)
 }
 
 .btns ion-button:nth-child(2n + 1) {

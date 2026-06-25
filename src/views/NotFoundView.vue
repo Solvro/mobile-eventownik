@@ -27,7 +27,7 @@ h1 {
   
   margin-bottom: 20px;
   text-align: center;
-  background: var(--radial-gradient);
+  background: var(white);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -47,6 +47,6 @@ h1 {
 
   margin-bottom: 12px;
 
-  background: var(--radial-gradient);
+  background: var(white);
 }
 </style>

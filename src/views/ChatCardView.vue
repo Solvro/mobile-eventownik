@@ -56,7 +56,7 @@ export default {
     padding: 1rem;
     margin: 1rem;
     border-radius: 10px;
-    background-color: var(--bg-lighter);
+    background-color: var(--primary);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -98,12 +98,12 @@ export default {
 .chat-element__header p {
     margin: 0;
     font-size: 0.8rem;
-    color: var(--text-gray);
+    color: var(--muted-foreground);
 }
 
 .chat-element__message {
     font-size: 0.9rem;
-    color: var(--text-gray);
+    color: color-mix(in hsl, var(--primary-foreground) 70%, var(--muted-foreground));
     display: flex;
     justify-content: space-between;
     align-content: start;

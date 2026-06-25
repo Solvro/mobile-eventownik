@@ -30,7 +30,7 @@ import moment from 'moment'
 
 <style scoped>
 .box {
-    background-color: var(--bg-light);
+    background-color: var(--primary);
     border-radius: 20px;
     margin-bottom: 14px;
     padding: 12px 20px;
@@ -71,12 +71,12 @@ import moment from 'moment'
 }
 
 .date {
-    color: var(--text-gray)
+    color: var(--muted-foreground)
 }
 
 .points {
     border-radius: 20px;
-    background: var(--theme-light);
+    background: var(--primary-foreground);
     padding: 2px 12px;
     font-size: 12px
 }
@@ -91,7 +91,7 @@ import moment from 'moment'
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
-    color: var(--text-gray)
+    color: var(--muted-foreground)
 }
 
 .points-type {
