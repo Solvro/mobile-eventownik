@@ -4,9 +4,7 @@ defineProps(['title', 'icon', 'link']);
 
 <template>
   <div class="card" @click="click">
-    <div class="card__icon">
-      <component :is="icon" aria-label="icon" />
-    </div>
+    <component :is="icon" class="card__icon" aria-label="icon" />
     <div class="card__title">
       <p>{{ title }}</p>
     </div>
@@ -34,7 +32,6 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: calc(33% - 15px);
   height: auto;
   aspect-ratio: 1 / 1;
   border-radius: 20px;
@@ -47,6 +44,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 50%;
+  width: 40%;
 }
 
 .card__icon img {

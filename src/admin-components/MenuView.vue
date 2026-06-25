@@ -70,9 +70,6 @@ import { importContacts, deleteContacts } from '@/functions/importContacts'
           <MenuCard title="Sos" :icon="SosIcon" link="/sos" />
           <MenuCard title="Mapka" :icon="MapIcon" link="/mapa" />
 
-
-          <div style="height: calc(33vw - 25px); width: calc(33vw - 25px)"></div>
-          <div style="height: calc(33vw - 25px); width: calc(33vw - 25px)"></div>
         </div>
       </main>
     </ion-content>
@@ -81,13 +78,12 @@ import { importContacts, deleteContacts } from '@/functions/importContacts'
 
 <style scoped>
 .cards {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  margin: auto;
   margin-top: 20px;
-  gap: 12px;
+  gap: 16px;
 }
 </style>
 
