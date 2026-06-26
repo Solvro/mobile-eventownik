@@ -97,7 +97,7 @@ h1 {
 }
 
 .arrow {
-  border: solid black;
+  border: solid var(--foreground);
   border-width: 0 4px 4px 0;
   border-image: var(white) 1;
   display: inline-block;

@@ -292,14 +292,9 @@ export default {
     font-weight: bold;
 }
 
-ion-content {
-    --overflow: hidden
-}
-
 body {
     margin: 0;
     background-color: #20262e;
-    overflow: hidden;
 }
 
 h2 {
