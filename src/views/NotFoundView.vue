@@ -33,7 +33,7 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 .button {
-  border-radius: 20px;
+  border-radius: var(--radius);
   border: none;
   color: black;
   padding: 20px 35px;

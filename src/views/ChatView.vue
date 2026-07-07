@@ -375,7 +375,7 @@ export default {
     margin: 2px;
     margin-right: 35px;
     background-color: rgba(61, 86, 142, 0.379);
-    border-radius: 20px 20px 20px 5px;
+    border-radius: var(--radius) 20px 20px 5px;
     width: auto;
     display: inline-block;
     backdrop-filter: blur(10px);
@@ -384,7 +384,7 @@ export default {
 
 .messageFromMe .message {
     background-color: var(--chat-color);
-    border-radius: 20px 20px 5px 20px;
+    border-radius: var(--radius) 20px 5px 20px;
     margin: 2px;
     margin-left: 35px;
     float: right;
@@ -457,7 +457,7 @@ export default {
     min-height: 30px;
 
     padding: 10px 15px 10px 15px;
-    border-radius: 20px;
+    border-radius: var(--radius);
     border: 1px solid var(--muted-foreground);
     font-size: 15px;
 
@@ -478,7 +478,7 @@ export default {
 }
 
 .textBoxButton {
-    /* border-radius: 20px; */
+    /* border-radius: var(--radius); */
     border: none;
     color: white;
     /* padding: 20px 35px; */

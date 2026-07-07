@@ -126,7 +126,7 @@ h6 {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -172,7 +172,7 @@ button {
   max-height: 200px;
   object-fit: cover;
   object-position: top;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 .name {
@@ -207,7 +207,7 @@ button {
   height: auto;
   /* max-height: 60vw; */
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 .image_overlay {
@@ -221,12 +221,12 @@ button {
 
   background: var(--background-color);
   padding: 10px 10px 30px;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 button,
 a.button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;

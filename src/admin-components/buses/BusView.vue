@@ -191,7 +191,7 @@ export default {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;

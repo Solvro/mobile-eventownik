@@ -109,7 +109,7 @@ ion-icon {
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.165);
-    border-radius: 10px;
+    border-radius: var(--radius);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
     /* padding: 20px; */
     position: relative;
@@ -122,7 +122,7 @@ ion-icon {
     height: 100%;
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
+    border-radius: var(--radius);
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -133,7 +133,7 @@ ion-icon {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: var(--radius);
 }
 
 .tinder-card__info {

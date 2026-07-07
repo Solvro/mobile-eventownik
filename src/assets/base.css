@@ -65,7 +65,7 @@ h5,
 h6 {
   margin-top: inherit !important;
   margin-bottom: inherit !important;
-  font-weight: 550 !important;
+  font-weight: 550;
   line-height: 1.6 !important;
 }
 

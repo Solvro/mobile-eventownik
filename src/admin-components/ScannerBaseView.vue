@@ -167,7 +167,7 @@ export default {
 .search {
   width: 50%;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: var(--radius);
   border: 1px solid black;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -200,7 +200,7 @@ export default {
 }
 
 .button {
-  border-radius: 20px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 20px 35px;

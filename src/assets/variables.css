@@ -108,7 +108,7 @@
   --tag-brown-text: #5c3d2e;
   
   --nav-height: 85px;
-  --radius: 0.5rem;
+  --radius: 6px;
 }
 
 ion-content {
@@ -209,7 +209,7 @@ body {
  /* zglos post - powod */
 .custom-alert .alert-wrapper {
     background-color: #c19f5e !important;
-    border-radius: 20px; 
+    border-radius: var(--radius); 
 }
 
 .custom-alert .alert-button {

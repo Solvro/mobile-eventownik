@@ -124,7 +124,7 @@ export default {
   background-color: #98794A;
   color: white;
   padding: 8px 16px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   cursor: pointer;
   font-weight: bold;
@@ -146,7 +146,7 @@ export default {
   max-height: 100%;
   object-fit: contain;
   border: 2px solid white;
-  border-radius: 20px;
+  border-radius: var(--radius);
   transition: transform 0.3s ease;
 }
 

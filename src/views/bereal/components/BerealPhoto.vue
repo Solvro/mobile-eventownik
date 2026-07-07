@@ -264,7 +264,7 @@ export default {
     left: 10px;
     height: 40%;
     aspect-ratio: 16/9;
-    border-radius: 20px;
+    border-radius: var(--radius);
     overflow: hidden;
     border: 2px solid white;
     background-size: cover;

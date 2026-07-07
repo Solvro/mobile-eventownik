@@ -438,7 +438,7 @@ h3 {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -458,7 +458,7 @@ button {
 .partner {
   height: 100px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   max-width: 300px;
   object-fit: contain;
 }
@@ -475,7 +475,7 @@ button {
 
 .image_link {
   width: 100%;
-  border-radius: 20px;
+  border-radius: var(--radius);
   object-fit: cover;
 }
 
@@ -518,7 +518,7 @@ button {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 .image_overlay {
@@ -532,12 +532,12 @@ button {
 
   background: var(--background-color);
   padding: 10px 10px 30px;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 
 a.button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;

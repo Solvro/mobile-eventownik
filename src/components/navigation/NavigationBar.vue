@@ -124,7 +124,8 @@ onBeforeUnmount(() => {
 
 .navigation-bar__content {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  place-items: center;
   max-width: 550px;
   margin: 0 auto;
 }

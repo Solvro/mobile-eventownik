@@ -194,7 +194,7 @@ export default {
 }
 
 .button {
-  border-radius: 20px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 20px 35px;
@@ -221,7 +221,7 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 20px;
+  border-radius: var(--radius);
   color: white;
   font-size: 23px;
   margin: 10px;
@@ -270,7 +270,7 @@ export default {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;

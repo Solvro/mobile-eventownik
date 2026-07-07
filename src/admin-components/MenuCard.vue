@@ -34,7 +34,7 @@ export default {
   justify-content: center;
   height: auto;
   aspect-ratio: 1 / 1;
-  border-radius: 20px;
+  border-radius: var(--radius);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-color: var(--primary);
 }

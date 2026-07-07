@@ -220,7 +220,7 @@ export default {
 select {
     width: 100%;
     padding: 10px 35px 10px 15px;
-    border-radius: 20px;
+    border-radius: var(--radius);
     border: 1px solid var(--muted-foreground);
     margin-bottom: 10px;
     font-size: 15px;
@@ -251,7 +251,7 @@ select {
 .filterOption {
     background: var(--primary);
     padding: 8px 15px;
-    border-radius: 20px;
+    border-radius: var(--radius);
 
     color: white;
     cursor: pointer;
@@ -268,7 +268,7 @@ select {
 }
 
 button {
-    border-radius: 20px;
+    border-radius: var(--radius);
     border: none;
     color: white;
     padding: 10px 20px;

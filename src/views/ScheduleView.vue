@@ -143,7 +143,7 @@ import ProfileCircle from '../components/navigation/ProfileCircle.vue'
 
 button,
 a.button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;

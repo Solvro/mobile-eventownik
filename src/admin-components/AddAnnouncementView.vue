@@ -156,7 +156,7 @@ select,
 textarea {
     width: 100%;
     padding: 10px 35px 10px 15px;
-    border-radius: 20px;
+    border-radius: var(--radius);
     border: 1px solid var(--muted-foreground);
     margin-bottom: 2px;
     font-size: 15px;
@@ -226,7 +226,7 @@ input[type=checkbox]:checked:after {
 }
 
 button {
-    border-radius: 20px;
+    border-radius: var(--radius);
     border: none;
     color: white;
     padding: 10px 20px;

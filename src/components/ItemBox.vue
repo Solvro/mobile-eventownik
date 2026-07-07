@@ -73,7 +73,7 @@ defineProps({
   flex-direction: row;
   padding: 10px;
   padding-right: 15px;
-  border-radius: 20px;
+  border-radius: var(--radius);
   margin-bottom: 10px;
 
   min-height: 60px;

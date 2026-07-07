@@ -235,7 +235,7 @@ onIonViewDidLeave(() => {
     aspect-ratio: 9/16;
     z-index: 20;
     /* dynamic positioning (top/left or bottom/right) applied inline */
-    border-radius: 20px;
+    border-radius: var(--radius);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -59,12 +59,12 @@ export default {
 
   background: var(--primary);
   padding: 20px 10px;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 button,
 a.button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;

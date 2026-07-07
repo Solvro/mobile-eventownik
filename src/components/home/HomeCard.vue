@@ -55,7 +55,7 @@ defineProps({
   width: 210px;
   height: 210px;
   background-color: black;
-  border-radius: 20px;
+  border-radius: var(--radius);
   position: relative;
 
   display: inline-block;
@@ -78,13 +78,13 @@ defineProps({
   width: 100%;
   height: 80%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: var(--radius);
   object-position: center;
 }
 
 .time {
   background-color: white;
-  border-radius: 10px;
+  border-radius: var(--radius);
   float: right;
   color: black;
   margin: 10px;
@@ -103,7 +103,7 @@ defineProps({
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: var(--radius);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.08%, var(--primary) 72%);
 }
 

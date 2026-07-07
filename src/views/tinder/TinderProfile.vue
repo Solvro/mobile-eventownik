@@ -124,7 +124,7 @@ export default {
 
     background: var(--background-color);
     padding: 20px 10px;
-    border-radius: 20px;
+    border-radius: var(--radius);
     margin: 20px;
     margin-top: calc(20px + var(--ion-safe-area-top)/2);
 }
@@ -144,7 +144,7 @@ ion-textarea {
     --padding-top: 10px;
     --padding-bottom: 10px;
     --background: var(--primary);
-    --border-radius: 10px;
+    --border-radius: var(--radius);
     margin-bottom: 10px;
 }
 

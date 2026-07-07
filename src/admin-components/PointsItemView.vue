@@ -31,7 +31,7 @@ import moment from 'moment'
 <style scoped>
 .box {
     background-color: var(--primary);
-    border-radius: 20px;
+    border-radius: var(--radius);
     margin-bottom: 14px;
     padding: 12px 20px;
 }
@@ -51,7 +51,7 @@ import moment from 'moment'
 
 .validation {
     background-color: var(--red);
-    border-radius: 20px;
+    border-radius: var(--radius);
     padding: 2px 10px;
     font-size: 12px;
     text-align: center;
@@ -75,7 +75,7 @@ import moment from 'moment'
 }
 
 .points {
-    border-radius: 20px;
+    border-radius: var(--radius);
     background: var(--primary-foreground);
     padding: 2px 12px;
     font-size: 12px

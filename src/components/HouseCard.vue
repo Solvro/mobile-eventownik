@@ -163,7 +163,7 @@ export default {
     width: 100%;
     height: 20px;
     background-color: var(--primary);
-    border-radius: 10px;
+    border-radius: var(--radius);
     margin-top: 10px;
     overflow: hidden;
     position: relative;
@@ -172,7 +172,7 @@ export default {
 .progress {
     height: 100%;
     background-color: var(--primary);
-    border-radius: 10px;
+    border-radius: var(--radius);
     position: absolute;
     top: 0;
     left: 0;
@@ -200,7 +200,7 @@ export default {
 .progress-info-container {
     width: 100%;
     height: 3px;
-    border-radius: 10px;
+    border-radius: var(--radius);
     margin-top: 8px;
     position: relative;
 }

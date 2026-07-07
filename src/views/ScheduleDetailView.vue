@@ -67,7 +67,7 @@ main {
 }
 
 .button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -113,7 +113,7 @@ main {
 
 .time {
   background-color: white;
-  border-radius: 10px;
+  border-radius: var(--radius);
   float: right;
   color: black;
   margin: 20px;
@@ -186,7 +186,7 @@ main {
   height: auto;
   /* max-height: 60vw; */
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 </style>
 

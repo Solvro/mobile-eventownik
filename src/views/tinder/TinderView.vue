@@ -255,7 +255,7 @@ export default {
 <style scoped>
 .help-overlay {
     background-color: var(--background-color);
-    border-radius: 10px;
+    border-radius: var(--radius);
     padding: 20px;
     margin: 0 20px;
     margin-top: 50px;

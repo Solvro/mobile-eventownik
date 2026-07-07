@@ -55,7 +55,7 @@ export default {
     align-items: center;
     padding: 1rem;
     margin: 1rem;
-    border-radius: 10px;
+    border-radius: var(--radius);
     background-color: var(--primary);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
