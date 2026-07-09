@@ -117,11 +117,6 @@ ion-content {
 
 body {
   --ion-text-color: var(--primary-foreground);
-
-  --login-button-bg:
-    color-mix(in srgb, var(--primary) 12%, white);
-  --chat-color:
-    color-mix(in srgb, var(--primary) 35%, white);
   --red: color-mix(in srgb, var(--destructive) 70%, black);
   --daily-quest-gradient:
     radial-gradient(

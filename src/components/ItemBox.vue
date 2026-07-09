@@ -74,7 +74,7 @@ defineProps({
   padding: 10px;
   padding-right: 15px;
   border-radius: var(--radius);
-  margin-bottom: 10px;
+  margin: 15px 0;
 
   min-height: 60px;
 

@@ -8,7 +8,7 @@ import {
   Hammer as HammerIcon,
   ScanQrCode as ScannerIcon,
   CirclePlus as PointsIcon,
-  Shapes as RankingIcon, // ??
+  Shapes as Podium,
   Megaphone as AnnouncementIcon,
   Bus as BusIcon,
   Users as GroupIcon,

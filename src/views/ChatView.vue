@@ -67,23 +67,23 @@ import { nextTick } from 'vue'
                             </div>
                         </div>
 
-                        <div class="goToBottom" @pointerdown="cacheFocusState" @touchstart="cacheFocusState"
+                        <div class="go-to-bottom" @pointerdown="cacheFocusState" @touchstart="cacheFocusState"
                              @click.prevent="scrollToBottomAndRefocus" v-if="!isAtBottom">
                             <downArrowIcon />
                         </div>
 
 
-                        <div class="textBox">
+                        <div class="chat-input">
                             <input ref="messageInput" type="text" v-on:keyup.enter="sendMessage"
                                 v-model="currentMessage" placeholder="Aa" maxlength="500" @focus="keyboardOpened" @blur="keyboardClosed"/>
 
-                            <button class="textBoxButton" v-if="currentMessage.trim() === ''" type="button"
+                            <button class="chat-input-button" v-if="currentMessage.trim() === ''" type="button"
                                 tabindex="-1" @pointerdown="cacheFocusState" @touchstart="cacheFocusState"
                                 @click.prevent="currentMessage = '🍺'; sendMessage()">🍺</button>
 
-                            <button class="textBoxButton sendIcon" v-else type="button" tabindex="-1"
+                            <button class="chat-input-button" v-else type="button" tabindex="-1"
                                 @pointerdown="cacheFocusState" @touchstart="cacheFocusState"
-                                @click.prevent="sendMessage"><sendIcon/></button>
+                                @click.prevent="sendMessage"><sendIcon class="sendIcon"/></button>
 
                         </div>
                     </div>
@@ -352,6 +352,9 @@ export default {
 }
 
 .scroll {
+    --chat-height: 46px;
+    --chat-margin: 8px;
+
     margin-top: 51px;
 }
 
@@ -362,19 +365,18 @@ export default {
     padding-top: calc(10px + var(--ion-safe-area-top));
 }
 
-
 .chat {
     display: flex;
     flex-direction: column;
     margin: 35px 0;
-    margin-bottom: 40px;
+    margin-bottom: calc(var(--nav-height) + var(--chat-height));
 }
 
 .message {
     padding: 10px 20px;
     margin: 2px;
     margin-right: 35px;
-    background-color: rgba(61, 86, 142, 0.379);
+    background-color: color-mix(in srgb, var(--foreground) 40%, transparent);
     border-radius: var(--radius) 20px 20px 5px;
     width: auto;
     display: inline-block;
@@ -383,7 +385,7 @@ export default {
 }
 
 .messageFromMe .message {
-    background-color: var(--chat-color);
+    background-color: color-mix(in srgb, var(--primary) 80%, transparent);
     border-radius: var(--radius) 20px 5px 20px;
     margin: 2px;
     margin-left: 35px;
@@ -415,7 +417,7 @@ export default {
     margin-top: 0;
 }
 
-.goToBottom {
+.go-to-bottom {
     position: fixed;
     bottom: 65px;
     right: 0;
@@ -425,7 +427,7 @@ export default {
     align-items: center;
 }
 
-.goToBottom img {
+.go-to-bottom img {
     width: 30px;
     height: 30px;
     object-fit: contain;
@@ -435,53 +437,49 @@ export default {
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.4);
 }
 
-.textBox {
+.chat-input {
     width: 100%;
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: var(--nav-height);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(61, 87, 142, 0.149);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
-.textBox input {
-    width: calc(100% - 50px - 10px - 10px);
-    margin: 5px;
-    margin-bottom: 5px;
-    margin-left: 8px;
+.chat-input input {
+    width: calc(100% - 50px - 8px * 2);
+    margin: 8px;
     min-height: 30px;
-
+    
     padding: 10px 15px 10px 15px;
     border-radius: var(--radius);
-    border: 1px solid var(--muted-foreground);
     font-size: 15px;
-
-    border: none;
+    
     outline: none;
-    color: white;
+    color: var(--foreground);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    caret-color: white;
-
-    background-color: var(--primary);
-
+    caret-color: var(--foreground);
+    
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+    height: var(--chat-height);
+    
 }
 
-.textBox input::placeholder {
+.chat-input input::placeholder {
     color: rgba(255, 255, 255, 0.546);
 }
 
-.textBoxButton {
-    /* border-radius: var(--radius); */
+.chat-input-button {
     border: none;
     color: white;
-    /* padding: 20px 35px; */
     padding: 0;
 
     font-size: 23px;
@@ -490,29 +488,18 @@ export default {
 
     width: 50px;
     height: 30px;
-    margin: 10px;
+    margin: 8px;
     margin-left: 0;
 
     display: inline-block;
-
     background-color: transparent;
-
 }
 
 .sendIcon {
-    /* width: 100%; */
-    /* height: 100%; */
-    object-fit: contain;
-    overflow: hidden;
+    color: var(--foreground);
+    width: 100%; 
+    height: 100%; 
 }
-
-.sendIcon img {
-    height: 100%;
-    filter: drop-shadow(0px 100px 0 var(--primary));
-    transform: translateY(-100px);
-}
-
-
 
 .datetime {
     text-align: center;
