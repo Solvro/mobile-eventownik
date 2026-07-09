@@ -451,8 +451,8 @@ export default {
 }
 
 .chat-input input {
-    width: calc(100% - 50px - 8px * 2);
-    margin: 8px;
+    width: calc(100% - 50px - var(--chat-margin) * 2);
+    margin: var(--chat-margin);
     min-height: 30px;
     
     padding: 10px 15px 10px 15px;
@@ -488,7 +488,7 @@ export default {
 
     width: 50px;
     height: 30px;
-    margin: 8px;
+    margin: var(--chat-margin);
     margin-left: 0;
 
     display: inline-block;
