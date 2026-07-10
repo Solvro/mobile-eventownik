@@ -110,7 +110,6 @@ h1 {
 
 .header_absolute .arrow {
   border-image: none;
-  border-color: black;
 }
 
 .header-left {

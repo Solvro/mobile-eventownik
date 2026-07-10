@@ -104,11 +104,11 @@ defineProps({
   width: 100%;
   height: 100%;
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.08%, var(--primary) 72%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.08%, black 72%);
 }
 
 .card.wide .overlay {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.08%, var(--primary) 72%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.08%, black 72%);
 }
 
 .description {

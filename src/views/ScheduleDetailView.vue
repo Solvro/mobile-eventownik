@@ -131,7 +131,7 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.08%, var(--primary) 73.74%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.08%, var(--background-color) 73.74%);
 }
 
 .description {

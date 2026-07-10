@@ -232,6 +232,14 @@ onMounted(async () => {
   overflow: hidden;
   transition: box-shadow 0.2s;
 }
+.bingo-cell span {
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
 .bingo-cell--filled {
   background: var(--primary);
 }

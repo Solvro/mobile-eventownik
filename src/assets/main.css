@@ -15,3 +15,7 @@ ion-button:not([fill="clear"]) {
   --background: var(--primary);
   --background-activated: var(--primary);
 }
+
+ion-button { 
+  text-transform: none;
+}

@@ -12,8 +12,8 @@ import { mapStores } from 'pinia'
     <div>
         <p class="infoButton" @click="showChatSettings">Opcje</p>
 
-        <OverlayView ref="chatSettingsOverlay">
-            <div class="padding" v-if="chat">
+        <OverlayView ref="chatSettingsOverlay" v-if="chat">
+            <div class="padding wrapper">
                 <h2>Czat</h2>
 
                 <div v-if="chat.users.length == 2 && chatingUserId">
@@ -167,6 +167,14 @@ export default {
     gap: 1rem;
     align-items: center;
     justify-content: center;
+}
+.wrapper {
+    background-color: var(--background-color);
+    border-radius: var(--radius);
+    margin: 50px 20px 0 20px;
+}
+h2, h3 {
+    margin: 0 !important;
 }
 
 .description {
