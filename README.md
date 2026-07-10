@@ -1,70 +1,125 @@
-# WrocTech Students' Camp App Frontend - Vue.js Project (Obóz Studnetów PWr)
+# <img src="https://github.com/Solvro/web-testownik/blob/main/public/favicon/180x180.png?raw=true" width="24"> Eventownik Solvro – Mobile Legacy
 
-This project is a frontend built with Vue.js + Capacitor for an application that manages camps for students of Wrocław University of Science and Technology. The project includes a Django backend and a Vue.js frontend.
+> [!WARNING]
+> To repozytorium zawiera starą wersję aplikacji. Nowa wersja aplikacji rozwijana jest w repozytorium [mobile-eventownik-v2](https://github.com/Solvro/mobile-eventownik-v2).
 
-## Project Structure
+<div align="center">
 
-- **src/** - The main source directory of the application.
-  - **assets/** - Static resources such as CSS styles and images.
-    - `main.css` - Main application styles.
-    - `variables.css` - CSS variables for the theme.
-  - **components/** - Vue components used in the application.
-    - `ExampleComponent.vue` - Example component.
-  - **router/** - Application routing configuration.
-    - `index.js` - Application route definitions.
-  - **store/** - Application state management (Pinia).
-  - **App.vue** - The main application component.
-  - **main.js** - The application's entry point.
-- **public/** - Public files that are directly accessible (e.g., `index.html`).
-- **package.json** - Project configuration file containing dependencies and scripts.
-- **vite.config.js** - Configuration for the Vite tool.
+![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
+![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
+![Pinia](https://img.shields.io/badge/pinia-%23ffe05d.svg?style=for-the-badge&logo=pinia&logoColor=black)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![Cypress](https://img.shields.io/badge/-cypress-%23E9F1F7?style=for-the-badge&logo=cypress&logoColor=00BF88)
+![Capacitor](https://img.shields.io/badge/capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)
+![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=Ionic&logoColor=white)
 
-## Requirements
+</div>
 
-- Node.js
-- npm
+## Uruchomienie lokalne
 
-## Installation
+### Wymagania
 
-1. Clone the repository:
-```bash
-git clone <REPO_URL>
-cd oboz_studentow_pwr_frontend
-```
+- [Node.js](https://nodejs.org/)
+- npm (dostarczany z Node.js)
 
-2. Install dependencies:
-```bash
-npm install
-```
+### Instalacja
 
-## Running development server
+1. **Sklonuj repozytorium**
 
-1. Set environment variables with API URL:
-```bash
-export VITE_API_URL='http://localhost:8000/api/'
-export VITE_WS_API_URL='ws://localhost:8000/'
-```
+   ```bash
+   git clone https://github.com/Solvro/mobile-eventownik.git
+   cd mobile-eventownik
+   ```
 
-2. Make sure API server is running.
-2. Run the app
-```bash
-ionic serve
-```
+2. **Zainstaluj zależności**
 
-## Running E2E tests
-1. Add the below environment variables to the API server. It will disable throttling for tests:
-```env
-ANON_THROTTLE_RATE = 'None'
-USER_THROTTLE_RATE = 'None'
-```
+   ```bash
+   npm install
+   ```
 
-2. Run the following commands in the terminal:
-```bash
-npx cypress open
-```
+3. **Ustaw zmienne środowiskowe z URL do API**
 
-3. in second terminal run:
-```bash
-ionic serve
-```
+   ```bash
+   export VITE_API_URL='http://localhost:8000/api/'
+   export VITE_WS_API_URL='ws://localhost:8000/'
+   ```
 
+4. **Uruchom serwer deweloperski** (upewnij się, że serwer API działa)
+
+   ```bash
+   ionic serve
+   ```
+
+## Testy E2E (Cypress)
+
+1. Dodaj poniższe zmienne środowiskowe do serwera API, aby wyłączyć limity (throttling) dla testów:
+
+   ```env
+   ANON_THROTTLE_RATE = 'None'
+   USER_THROTTLE_RATE = 'None'
+   ```
+
+2. W osobnym terminalu uruchom środowisko Cypress:
+
+   ```bash
+   npx cypress open
+   ```
+
+3. Upewnij się, że aplikacja kliencka działa równolegle (`ionic serve`).
+
+## Dostępne skrypty
+
+| Komenda            | Opis                                                  |
+| ------------------ | ----------------------------------------------------- |
+| `ionic serve`      | Uruchamia lokalny serwer deweloperski aplikacji       |
+| `npm install`      | Instaluje wszystkie wymagane zależności projektu      |
+| `npx cypress open` | Otwiera okno uruchomieniowe testów end-to-end Cypress |
+
+## Struktura projektu
+
+- **src/** – Główny katalog źródłowy aplikacji.
+  - **assets/** – Zasoby statyczne, takie jak style CSS i obrazy.
+    - `main.css` – Główne style aplikacji.
+    - `variables.css` – Zmienne CSS motywu.
+  - **components/** – Komponenty Vue używane w aplikacji.
+    - `ExampleComponent.vue` – Przykładowy komponent.
+  - **router/** – Konfiguracja routingu aplikacji.
+    - `index.js` – Definicje ścieżek aplikacji.
+  - **store/** – Zarządzanie stanem aplikacji (Pinia).
+  - **App.vue** – Główny komponent aplikacji.
+  - **main.js** – Punkt wejściowy aplikacji.
+- **public/** – Pliki publiczne dostępne bezpośrednio (np. `index.html`).
+- **package.json** – Plik konfiguracyjny projektu zawierający zależności i skrypty.
+- **vite.config.js** – Konfiguracja Vite.
+
+## Stack technologiczny
+
+### Frontend
+
+- **Framework:** [Vue.js 3](https://vuejs.org/)
+- **Stan globalny:** [Pinia](https://pinia.vuejs.org/)
+- **Build Tool:** [Vite](https://vite.dev/)
+- **Routing:** Vue Router
+
+### UI & Mobile
+
+- **Cross-platform Runtime:** [Capacitor](https://capacitorjs.com/)
+- **UI Framework:** [Ionic](https://ionicframework.com/)
+
+### Testy
+
+- **E2E Testing:** [Cypress](https://www.cypress.io/)
+
+---
+
+## Licencja
+
+Projekt jest udostępniany na warunkach licencji **AGPL (GNU Affero General Public License)**.
+
+---
+
+<div align="center">
+
+Stworzone przez [KN Solvro](https://github.com/Solvro) dla studentów Politechniki Wrocławskiej
+
+</div>
