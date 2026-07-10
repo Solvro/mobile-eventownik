@@ -69,7 +69,7 @@ export default {
     async startStan() {
       const granted = await this.requestPermissions();
       if (!granted) {
-        console.log('Permission denied', 'Please grant camera permission to use the barcode scanner.');
+        console.log('Permission denied', 'Please grant camera permission to use the barcode scanner');
         return;
       }
       if (isPlatform('android')) {
@@ -85,7 +85,7 @@ export default {
             } else if (event.state = 5) {
               // FAILED
               console.log('Google Barcode Scanner was not installed');
-              this.qrReaderError = 'ERROR: Moduł Google Barcode Scanner nie jest dostępny i nie został zainstalowany. Jeżeli problem nadal występuje, zainstaluj "Usługi operatora" (ang. "Google Play services") z Google Play.';
+              this.qrReaderError = 'ERROR: Moduł Google Barcode Scanner nie jest dostępny i nie został zainstalowany. Jeżeli problem nadal występuje, zainstaluj "Usługi operatora" (ang. "Google Play services") z Google Play';
             } else {
               console.log('Google Barcode Scanner installation in progress');
               this.qrReaderError = 'Moduł Google Barcode Scanner jest instalowany (status: ' + event.state + ', progres: ' + event.progress + ')';

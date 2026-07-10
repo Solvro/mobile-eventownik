@@ -5,7 +5,7 @@
         <TopBar title="Sprawdzanie Bingo" />
         <div class="bingo-list">
           <div v-if="loading" class="info">Ładowanie...</div>
-          <div v-else-if="!instances.length" class="info">Brak zgłoszeń do weryfikacji.</div>
+          <div v-else-if="!instances.length" class="info">Brak zgłoszeń do weryfikacji</div>
           <div v-else v-for="inst in instances" :key="inst.id" class="bingo-submission">
             <div class="submission-header">
               <h3>Użytkownik #{{ inst.user }} | Plansza #{{ inst.id }}</h3>

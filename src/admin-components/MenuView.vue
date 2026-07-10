@@ -2,8 +2,7 @@
 import TopBar from '../components/navigation/TopBar.vue'
 import MenuCard from './MenuCard.vue'
 
-import { 
-  LifeBuoy as SosIcon,
+import {
   Map as MapIcon,
   Hammer as HammerIcon,
   ScanQrCode as ScannerIcon,
@@ -67,7 +66,6 @@ import { importContacts, deleteContacts } from '@/functions/importContacts'
           " />
 
           <MenuCard title="Warsztaty" :icon="HammerIcon" link="/warsztaty" />
-          <MenuCard title="Sos" :icon="SosIcon" link="/sos" />
           <MenuCard title="Mapka" :icon="MapIcon" link="/mapa" />
 
         </div>

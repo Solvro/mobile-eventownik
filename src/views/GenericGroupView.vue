@@ -114,7 +114,7 @@ main {
 }
 
 h1 {
-  background: var(white);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -250,7 +250,7 @@ a.button {
 .topRightButton {
   text-align: right;
   padding: 10px;
-  background: var(white);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

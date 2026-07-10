@@ -181,9 +181,9 @@ async function generate() {
   } catch (e) {
     try {
       const data = await e.json?.()
-      genError.value = data?.error || 'Nie udało się wygenerować planszy.'
+      genError.value = data?.error || 'Nie udało się wygenerować planszy'
     } catch (_) {
-      genError.value = 'Nie udało się wygenerować planszy.'
+      genError.value = 'Nie udało się wygenerować planszy'
     }
   } finally {
     generating.value = false

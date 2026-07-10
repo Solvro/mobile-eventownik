@@ -100,7 +100,7 @@ h1 {
 .arrow {
   border: solid var(--foreground);
   border-width: 0 4px 4px 0;
-  border-image: var(white) 1;
+  border-image: white 1;
   display: inline-block;
   padding: 7px;
   margin-left: 4px;

@@ -199,7 +199,7 @@ export default {
 
             this.chatSocket.onopen = function () {
                 this.loading = false
-                console.log("The connection was setup successfully !");
+                console.log("The connection was setup successfully!");
             }.bind(this);
 
             this.chatSocket.onclose = function () {

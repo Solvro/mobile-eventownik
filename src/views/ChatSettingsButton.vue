@@ -31,7 +31,7 @@ import { mapStores } from 'pinia'
                 <ion-button id="open-action-sheet" :disabled="chat.house_chat" color="danger">Zablokuj</ion-button>
                 <ion-action-sheet trigger="open-action-sheet" class="my-custom-class"
                     header="Czy jesteś pewien/pewna, że chcesz zablokwować ten czat?"
-                    sub-header="Czat zniknie z historii. Tej operacji nie da się cofnąć." :buttons="actionSheetButtons"
+                    sub-header="Czat zniknie z historii. Tej operacji nie da się cofnąć" :buttons="actionSheetButtons"
                     @didDismiss="didDismiss"></ion-action-sheet>
 
 

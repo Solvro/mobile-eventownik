@@ -29,7 +29,7 @@ import ChatCardView from '@/views/ChatCardView.vue'
                 <TopBar title="Obozer" backLink="/home" />
                 <ProfileCircle />
 
-                <h2 v-if="noMoreProfiles && !queue.length">Koniec profilów.<br>Sprawdź później, czy dołączył ktoś nowy.
+                <h2 v-if="noMoreProfiles && !queue.length">Koniec profilów<br>Sprawdź później, czy dołączył ktoś nowy
                 </h2>
 
                 <h2 v-if="info">{{ info }}</h2>
@@ -53,9 +53,9 @@ import ChatCardView from '@/views/ChatCardView.vue'
                                         możliwość
                                         natychmiastowego czatowania nawet
                                         jeżeli nie masz matcha z
-                                        drugą osobą.</p>
+                                        drugą osobą</p>
                                     <p class="subdesctiprion">UWAGA! Super like możesz użyć raz na cały obóz. Use it
-                                        wisely.</p>
+                                        wisely</p>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@ import ChatCardView from '@/views/ChatCardView.vue'
                     <div class="help-overlay">
                         <div class="help-content">
                             <h4>Match!</h4>
-                            <p>Gratulacje! Masz matcha z tą osobą. Możesz teraz zacząć rozmowę.</p>
+                            <p>Gratulacje! Masz matcha z tą osobą. Możesz teraz zacząć rozmowę</p>
                             <ChatCardView :chat="{ avatar: matchData.photo, name: matchData.name, users: [1, 1] }" />
                         </div>
                         <div class="help-footer">

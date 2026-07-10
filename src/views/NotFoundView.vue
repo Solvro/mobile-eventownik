@@ -24,10 +24,9 @@
 
 h1 {
   font-size: 40px;
-  
   margin-bottom: 20px;
   text-align: center;
-  background: var(white);
+  background: white;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -47,6 +46,6 @@ h1 {
 
   margin-bottom: 12px;
 
-  background: var(white);
+  background: white;
 }
 </style>

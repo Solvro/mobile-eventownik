@@ -13,7 +13,7 @@ import moment from 'moment'
             </div>
             <div class="validation" :class="{ 'validation-successful': validated, 'validation-rejected': rejected }">
                 <p>{{ validated ?
-                    (rejected ? 'Zatw. i Odrzu.' : 'Zatwierdzone')
+                    (rejected ? 'Zatwierdzone i odrzucone' : 'Zatwierdzone')
                     : (rejected ? 'Odrzucone' : "Nie zatwierdzone") }}</p>
                 <p>{{ validationDate ? moment(validationDate).format("HH:mm ddd. DD.MM") : "" }}</p>
                 <p>{{ validatedBy }}</p>

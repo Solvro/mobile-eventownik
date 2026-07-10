@@ -150,8 +150,7 @@ const VITE_API_URL = import.meta.env.VITE_API_URL;
 
         <div class="credits">
           <p>© Eventownik {{ moment().format('YYYY') }}</p>
-          <p>Made with 🍺 by <a href="https://www.linkedin.com/in/marvin-rucinski/" target="_blank"><u>Marvin</u></a> & Komisja ds. Informatyzacji SSPWr 🖥️</p>
-          <p>Powered by <a href="https://solvro.pwr.edu.pl/pl/" target="_blank"><u>Solvro</u></a></p>
+          <p>Made by <a href="https://www.linkedin.com/in/marvin-rucinski/" target="_blank"><u>Marvin</u></a> & Komisja ds. Informatyzacji SSPWr 🖥️</p>
         </div>
 
       </div>

@@ -258,7 +258,7 @@ select {
 }
 
 .filterOptionSelected {
-    background: var(white);
+    background: white;
 }
 
 .filters select {

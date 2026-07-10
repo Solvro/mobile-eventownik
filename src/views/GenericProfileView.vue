@@ -172,7 +172,7 @@ defineProps([
 }
 
 h1 {
-  background: var(white);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
