@@ -208,13 +208,13 @@ onMounted(async () => {
 .bingo-grid {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
   width: 100%;
   max-width: min(400px, 95vw);
 }
 .bingo-row {
   display: flex;
-  gap: 4px;
+  gap: 8px;
 }
 .bingo-cell {
   width: calc((min(400px, 95vw) - 32px) / 5);
@@ -386,7 +386,7 @@ onMounted(async () => {
 
 /* states */
 .state-submitted {
-  border: 4px solid #2196F3;
+  border: 4px solid #d0deff;
 }
 
 .state-approved {
@@ -398,7 +398,7 @@ onMounted(async () => {
 }
 
 .state-not_started {
-  border: 4px solid #777;
+  border: none;
 }
 
 .task-state {

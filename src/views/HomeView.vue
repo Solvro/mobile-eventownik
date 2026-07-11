@@ -19,7 +19,8 @@ import homeCardLinkBg from '../assets/home-card-link-bg.png'
 
 import { 
   Megaphone as megaphoneIcon,
-  ChevronRight as rightArrow
+  ChevronRight as rightArrow,
+  Grid3x3 as bingoIcon
 } from '@lucide/vue'
 
 import graNocna from '../assets/gra nocna.png'
@@ -233,7 +234,7 @@ import BerealAlert from '../views/bereal/components/BerealAlert.vue'
         <!-- Bingo -->
         <div class="padding" v-if="apiDataStore.bingoStatus.ready && apiDataStore.bingoStatus.data.is_active">
           <RouterLink to="/bingo">
-            <ItemBox bigText="Bingo" :rightIcon="rightArrow" left-icon-white />
+            <ItemBox bigText="Bingo" :rightIcon="rightArrow" :left-icon="bingoIcon" left-icon-white />
           </RouterLink>
         </div>
 
