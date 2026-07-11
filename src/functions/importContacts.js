@@ -4,7 +4,7 @@ import { Contacts, PhoneType } from '@capacitor-community/contacts';
 
 var importingContacts = false;
 
-const company = "Obóz'25";
+const company = "Eventownik";
 
 export async function importContacts() {
     if (importingContacts) return;

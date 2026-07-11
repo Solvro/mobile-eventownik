@@ -18,7 +18,7 @@
 
           <div class="top-right-text">
             <span :class="{ active: selectedTab === 'oboz', inactive: selectedTab !== 'oboz' }"
-              @click="setTab('oboz')">Obóz</span>
+              @click="setTab('oboz')">Wydarzenie</span>
             /
             <span :class="{ active: selectedTab === 'frakcja', inactive: selectedTab !== 'frakcja' }"
               @click="setTab('frakcja')">Frakcja</span>
