@@ -19,30 +19,22 @@ import { IonPage, IonContent } from '@ionic/vue';
         <TopBar :backLink="$router.options.history.state.back || '/home'" absolute />
         <div v-if="apiDataStore.schedule.ready && apiDataStore.schedule.data.length && scheduleId"
           :set="data = apiDataStore.schedule.withId(scheduleId)">
-          <div class="card">
-            <img class="bg" :src="data.photo || questionMark" />
-            <div class="time">
-              <p>{{ moment(data.start).format('dd. DD.MM') }}</p>
-              <p>{{ moment(data.start).format('H:mm') + (data.end !== data.start ? (' - ' +
-                moment(data.end).format('H:mm')) :
-                '') }}</p>
-            </div>
-            <div class="overlay"></div>
+          <div class="card" :style="{ backgroundImage: `url(${data.photo || questionMark})` } ">
+            <p class="time">{{ moment(data.start).format('dd. DD.MM') }} <br/>
+              {{ moment(data.start).format('H:mm') + (data.end !== data.start ? (' - ' +
+              moment(data.end).format('H:mm')) :
+              '') }}
+            </p>
             <div class="description">
-              <div>
-                <h2 v-if="data.location">
-                  <IconLocation class="icon" /> {{ data.location }}
-                </h2>
-                <h1>{{ data.name }}</h1>
-              </div>
-
+              <h2 v-if="data.location">
+                <IconLocation class="icon" /> {{ data.location }}
+              </h2>
+              <h1>{{ data.name }}</h1>
             </div>
           </div>
 
           <div class="padding">
-
             <TextBox v-if="data.description" :content="data.description" />
-
           </div>
 
           <div v-if="!data.hide_map && data.location && mapData" class="padding">
@@ -96,19 +88,21 @@ main {
 .card {
   width: 100%;
   height: calc(325px + var(--ion-safe-area-top));
-  background-color: black;
   position: relative;
 
   display: inline-block;
   margin-bottom: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
-.bg {
+.card::after {
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  background: linear-gradient(180deg, transparent 10%, var(--background-color) 95%);
+  z-index: 0;
 }
 
 .time {
@@ -125,24 +119,15 @@ main {
   right: 0;
   box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.25);
   text-align: center;
-}
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.08%, var(--background-color) 73.74%);
+  z-index: 1;
 }
 
 .description {
   position: absolute;
   bottom: 0;
   padding: 20px;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  align-items: end;
-  gap: 5px;
+  z-index: 1;
 }
 
 .description h1 {
@@ -178,6 +163,7 @@ main {
   line-height: 12px !important;
   color: var(--muted-foreground);
   margin-top: 5px;
+  z-index: 1;
 }
 
 /* map */
