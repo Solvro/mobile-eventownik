@@ -26,7 +26,7 @@ import ChatCardView from '@/views/ChatCardView.vue'
     <ion-page>
         <ion-content :fullscreen="false">
             <main>
-                <TopBar title="Obozer" backLink="/home" />
+                <TopBar title="Tinderownik" backLink="/home" />
                 <ProfileCircle />
 
                 <h2 v-if="noMoreProfiles && !queue.length">Koniec profilów<br>Sprawdź później, czy dołączył ktoś nowy
@@ -37,7 +37,7 @@ import ChatCardView from '@/views/ChatCardView.vue'
                 <OverlayView ref="helpOverlay">
                     <div class="help-overlay">
                         <div class="help-content">
-                            <h4>Jak działa Obozer?</h4>
+                            <h4>Jak działa Tinderownik?</h4>
                             <div class="action-desc">
                                 <component :is="heart" class="like action-icon" />
                                 <p><span class="action-desc-title">Like</span> - Przesuń w prawo, aby polubić</p>

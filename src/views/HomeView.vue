@@ -219,7 +219,7 @@ import BerealAlert from '../views/bereal/components/BerealAlert.vue'
         <div class="padding" v-if="apiDataStore.profile.data && apiDataStore.profile.data[0].tinder_active && apiDataStore.profile.data[0].tinder_profile && apiDataStore.profile.data[0].tinder_profile.user && apiDataStore.profile.data[0].tinder_profile.photo &&
           apiDataStore.profile.data[0].tinder_profile.description">
           <RouterLink to="/tinder">
-            <ItemBox bigText="Obozer" :rightIcon="rightArrow" :leftIcon="tinderIcon" left-icon-white />
+            <ItemBox bigText="Tinderownik" :rightIcon="rightArrow" :leftIcon="tinderIcon" left-icon-white />
           </RouterLink>
         </div>
 
