@@ -9,15 +9,12 @@ moment.locale('pl')
 </script>
 
 <template>
-  <ion-app>
+  <ion-app class="dark">
     <ion-router-outlet class="page" />
   </ion-app>
 </template>
 
 <style>
-:root {
-  --nav-height: 85px
-}
 main {
   /* min-height: 100vh; */
   padding-top: max(var(--ion-safe-area-top), var(--ion-padding, 16px)) !important;

@@ -13,7 +13,7 @@ import moment from 'moment'
             </div>
             <div class="validation" :class="{ 'validation-successful': validated, 'validation-rejected': rejected }">
                 <p>{{ validated ?
-                    (rejected ? 'Zatw. i Odrzu.' : 'Zatwierdzone')
+                    (rejected ? 'Zatwierdzone i odrzucone' : 'Zatwierdzone')
                     : (rejected ? 'Odrzucone' : "Nie zatwierdzone") }}</p>
                 <p>{{ validationDate ? moment(validationDate).format("HH:mm ddd. DD.MM") : "" }}</p>
                 <p>{{ validatedBy }}</p>
@@ -30,8 +30,8 @@ import moment from 'moment'
 
 <style scoped>
 .box {
-    background-color: var(--bg-light);
-    border-radius: 20px;
+    background-color: var(--primary);
+    border-radius: var(--radius);
     margin-bottom: 14px;
     padding: 12px 20px;
 }
@@ -51,7 +51,7 @@ import moment from 'moment'
 
 .validation {
     background-color: var(--red);
-    border-radius: 20px;
+    border-radius: var(--radius);
     padding: 2px 10px;
     font-size: 12px;
     text-align: center;
@@ -71,12 +71,12 @@ import moment from 'moment'
 }
 
 .date {
-    color: var(--text-gray)
+    color: var(--muted-foreground)
 }
 
 .points {
-    border-radius: 20px;
-    background: var(--theme-light);
+    border-radius: var(--radius);
+    background: var(--primary-foreground);
     padding: 2px 12px;
     font-size: 12px
 }
@@ -91,7 +91,7 @@ import moment from 'moment'
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
-    color: var(--text-gray)
+    color: var(--muted-foreground)
 }
 
 .points-type {

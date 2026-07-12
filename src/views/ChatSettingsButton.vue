@@ -12,8 +12,8 @@ import { mapStores } from 'pinia'
     <div>
         <p class="infoButton" @click="showChatSettings">Opcje</p>
 
-        <OverlayView ref="chatSettingsOverlay">
-            <div class="padding" v-if="chat">
+        <OverlayView ref="chatSettingsOverlay" v-if="chat">
+            <div class="padding wrapper">
                 <h2>Czat</h2>
 
                 <div v-if="chat.users.length == 2 && chatingUserId">
@@ -31,7 +31,7 @@ import { mapStores } from 'pinia'
                 <ion-button id="open-action-sheet" :disabled="chat.house_chat" color="danger">Zablokuj</ion-button>
                 <ion-action-sheet trigger="open-action-sheet" class="my-custom-class"
                     header="Czy jesteś pewien/pewna, że chcesz zablokwować ten czat?"
-                    sub-header="Czat zniknie z historii. Tej operacji nie da się cofnąć." :buttons="actionSheetButtons"
+                    sub-header="Czat zniknie z historii. Tej operacji nie da się cofnąć" :buttons="actionSheetButtons"
                     @didDismiss="didDismiss"></ion-action-sheet>
 
 
@@ -156,7 +156,7 @@ export default {
 
 <style scoped>
 .infoButton {
-    color: var(--text-dark);
+    color: var(--foreground);
 }
 
 .padding {
@@ -168,10 +168,18 @@ export default {
     align-items: center;
     justify-content: center;
 }
+.wrapper {
+    background-color: var(--background-color);
+    border-radius: var(--radius);
+    margin: 50px 20px 0 20px;
+}
+h2, h3 {
+    margin: 0 !important;
+}
 
 .description {
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: var(--foreground-light);
 }
 
 ion-button {

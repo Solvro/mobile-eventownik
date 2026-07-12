@@ -11,8 +11,10 @@ import moment from 'moment'
 
 import { apiSocket } from '@/stores/functions.js'
 
-import sendIcon from '../assets/icons8-paper_plane.png'
-import downArrowIcon from '../assets/icons8-down-100.png'
+import { 
+    SendHorizonal as sendIcon,
+    MoveDown as downArrowIcon
+ } from '@lucide/vue'
 
 import { IonPage, IonContent } from '@ionic/vue';
 import { nextTick } from 'vue'
@@ -27,7 +29,7 @@ import { nextTick } from 'vue'
         <ion-content :fullscreen="false" ref="content" @ionScroll="handleScroll($event)" :scrollEvents="true">
             <div>
                 <TopBar :title="apiDataStore.chats.ready && chat && chat.name || 'Czat ?'" autoBackLink class="top-bar"
-                    :image="apiDataStore.chats.ready && chat ? chat.avatar : ''" background="var(--app-bg)">
+                    :image="apiDataStore.chats.ready && chat ? chat.avatar : ''" background="var(--background)">
                     <ChatSettingsButton :chat="chat" />
                 </TopBar>
                 <main class="padding-main">
@@ -65,23 +67,23 @@ import { nextTick } from 'vue'
                             </div>
                         </div>
 
-                        <div class="goToBottom" @pointerdown="cacheFocusState" @touchstart="cacheFocusState"
+                        <div class="go-to-bottom" @pointerdown="cacheFocusState" @touchstart="cacheFocusState"
                              @click.prevent="scrollToBottomAndRefocus" v-if="!isAtBottom">
-                            <img :src="downArrowIcon" />
+                            <downArrowIcon />
                         </div>
 
 
-                        <div class="textBox">
+                        <div class="chat-input">
                             <input ref="messageInput" type="text" v-on:keyup.enter="sendMessage"
                                 v-model="currentMessage" placeholder="Aa" maxlength="500" @focus="keyboardOpened" @blur="keyboardClosed"/>
 
-                            <button class="textBoxButton" v-if="currentMessage.trim() === ''" type="button"
+                            <button class="chat-input-button" v-if="currentMessage.trim() === ''" type="button"
                                 tabindex="-1" @pointerdown="cacheFocusState" @touchstart="cacheFocusState"
                                 @click.prevent="currentMessage = '🍺'; sendMessage()">🍺</button>
 
-                            <button class="textBoxButton sendIcon" v-else type="button" tabindex="-1"
+                            <button class="chat-input-button" v-else type="button" tabindex="-1"
                                 @pointerdown="cacheFocusState" @touchstart="cacheFocusState"
-                                @click.prevent="sendMessage"><img :src="sendIcon" /></button>
+                                @click.prevent="sendMessage"><sendIcon class="sendIcon"/></button>
 
                         </div>
                     </div>
@@ -197,7 +199,7 @@ export default {
 
             this.chatSocket.onopen = function () {
                 this.loading = false
-                console.log("The connection was setup successfully !");
+                console.log("The connection was setup successfully!");
             }.bind(this);
 
             this.chatSocket.onclose = function () {
@@ -350,6 +352,9 @@ export default {
 }
 
 .scroll {
+    --chat-height: 46px;
+    --chat-margin: 8px;
+
     margin-top: 51px;
 }
 
@@ -360,20 +365,19 @@ export default {
     padding-top: calc(10px + var(--ion-safe-area-top));
 }
 
-
 .chat {
     display: flex;
     flex-direction: column;
     margin: 35px 0;
-    margin-bottom: 40px;
+    margin-bottom: calc(var(--nav-height) + var(--chat-height));
 }
 
 .message {
     padding: 10px 20px;
     margin: 2px;
     margin-right: 35px;
-    background-color: rgba(61, 86, 142, 0.379);
-    border-radius: 20px 20px 20px 5px;
+    background-color: color-mix(in srgb, var(--foreground) 40%, transparent);
+    border-radius: var(--radius) 20px 20px 5px;
     width: auto;
     display: inline-block;
     backdrop-filter: blur(10px);
@@ -381,8 +385,8 @@ export default {
 }
 
 .messageFromMe .message {
-    background-color: var(--chatt-color);
-    border-radius: 20px 20px 5px 20px;
+    background-color: color-mix(in srgb, var(--primary) 80%, transparent);
+    border-radius: var(--radius) 20px 5px 20px;
     margin: 2px;
     margin-left: 35px;
     float: right;
@@ -413,7 +417,7 @@ export default {
     margin-top: 0;
 }
 
-.goToBottom {
+.go-to-bottom {
     position: fixed;
     bottom: 65px;
     right: 0;
@@ -423,63 +427,59 @@ export default {
     align-items: center;
 }
 
-.goToBottom img {
+.go-to-bottom img {
     width: 30px;
     height: 30px;
     object-fit: contain;
-    background-color: var(--theme-dark);
+    background-color: var(--foreground);
     border-radius: 50%;
     padding: 4px;
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.4);
 }
 
-.textBox {
+.chat-input {
     width: 100%;
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: var(--nav-height);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(61, 87, 142, 0.149);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
-.textBox input {
-    width: calc(100% - 50px - 10px - 10px);
-    margin: 5px;
-    margin-bottom: 5px;
-    margin-left: 8px;
+.chat-input input {
+    width: calc(100% - 50px - var(--chat-margin) * 2);
+    margin: var(--chat-margin);
     min-height: 30px;
-
+    
     padding: 10px 15px 10px 15px;
-    border-radius: 20px;
-    border: 1px solid var(--text-gray);
+    border-radius: var(--radius);
     font-size: 15px;
-
-    border: none;
+    
     outline: none;
-    color: white;
+    color: var(--foreground);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    caret-color: white;
-
-    background-color: var(--bg-light);
-
+    caret-color: var(--foreground);
+    
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+    height: var(--chat-height);
+    
 }
 
-.textBox input::placeholder {
+.chat-input input::placeholder {
     color: rgba(255, 255, 255, 0.546);
 }
 
-.textBoxButton {
-    /* border-radius: 20px; */
+.chat-input-button {
     border: none;
     color: white;
-    /* padding: 20px 35px; */
     padding: 0;
 
     font-size: 23px;
@@ -488,29 +488,18 @@ export default {
 
     width: 50px;
     height: 30px;
-    margin: 10px;
+    margin: var(--chat-margin);
     margin-left: 0;
 
     display: inline-block;
-
     background-color: transparent;
-
 }
 
 .sendIcon {
-    /* width: 100%; */
-    /* height: 100%; */
-    object-fit: contain;
-    overflow: hidden;
+    color: var(--foreground);
+    width: 100%; 
+    height: 100%; 
 }
-
-.sendIcon img {
-    height: 100%;
-    filter: drop-shadow(0px 100px 0 var(--send-button));
-    transform: translateY(-100px);
-}
-
-
 
 .datetime {
     text-align: center;

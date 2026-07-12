@@ -33,12 +33,8 @@ defineProps({
 </script>
 
 <template>
-  <div class="card" :class="{ big: big, wide: wide }">
-    <img class="bg" :src="imgSrc" />
-    <div class="time">
-      <p>{{ time }}</p>
-    </div>
-    <div class="overlay"></div>
+  <div class="card" :class="{ big: big, wide: wide }" :style="{ backgroundImage: `url(${imgSrc})` }" >
+    <p class="time">{{ time }}</p>
     <div class="description">
       <h2 v-if="location">
         <IconLocation class="icon" />
@@ -54,12 +50,27 @@ defineProps({
 .card {
   width: 210px;
   height: 210px;
-  background-color: black;
-  border-radius: 20px;
+  border-radius: var(--radius);
   position: relative;
-
+  margin: 0 0 10px;
   display: inline-block;
-  margin: 0 10px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.95) 100%);
+  z-index: 0;
+  pointer-events: none;
+  border-radius: var(--radius);
 }
 
 .card.big {
@@ -73,18 +84,9 @@ defineProps({
   aspect-ratio: 1.7;
 }
 
-.bg {
-  position: absolute;
-  width: 100%;
-  height: 80%;
-  object-fit: cover;
-  border-radius: 20px;
-  object-position: center;
-}
-
 .time {
   background-color: white;
-  border-radius: 10px;
+  border-radius: var(--radius);
   float: right;
   color: black;
   margin: 10px;
@@ -93,22 +95,11 @@ defineProps({
   position: absolute;
   right: 0;
   box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.25);
+  z-index: 1;
 }
 
-.time>p {
+p.time {
   font-weight: 600 !important;
-}
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44.08%, var(--bg-lighter) 72%);
-}
-
-.card.wide .overlay {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.08%, var(--bg-lighter) 72%);
 }
 
 .description {
@@ -123,8 +114,8 @@ defineProps({
   align-items: flex-start;
   justify-content: center;
   min-height: 26%;
+  z-index: 1;
 }
-
 
 .description h1 {
   font-size: 18px !important;
@@ -142,7 +133,7 @@ defineProps({
 .description h2 {
   font-size: 12px !important;
   line-height: 12px !important;
-  color: var(--text-gray);
+  color: color-mix(in hsl, white, var(--muted-foreground));
   display: flex;
   align-items: center;
   gap: 5px;
@@ -170,7 +161,7 @@ defineProps({
   font-size: 13px !important;
   line-height: 13px !important;
   padding: 5px 0 0;
-  color: var(--text-gray);
+  color: var(--muted-foreground);
 }
 
 .description .icon {

@@ -17,12 +17,15 @@ import { PushNotifications } from '@capacitor/push-notifications'
 import questionMark from '../assets/question-mark.jpg'
 import homeCardLinkBg from '../assets/home-card-link-bg.png'
 
-import rightArrow from '../assets/arrow.svg'
-import megaphoneIcon from '../assets/icons8-megaphone-100.png'
+import { 
+  Megaphone as megaphoneIcon,
+  ChevronRight as rightArrow,
+  Grid3x3 as bingoIcon
+} from '@lucide/vue'
 
 import graNocna from '../assets/gra nocna.png'
 import ItemBox from '../components/ItemBox.vue'
-import tinderIcon from '../assets/icons8-tinder-100.png'
+import { Flame as tinderIcon } from '@lucide/vue'
 import beerRealLogo from  '../assets/bEERreal1.png'
 
 import { IonPage, IonContent, IonRefresher, IonRefresherContent } from '@ionic/vue';
@@ -54,7 +57,7 @@ import BerealAlert from '../views/bereal/components/BerealAlert.vue'
           <RouterLink to="/zapisy-gra-nocna">
             <div class="image_link_container">
               <img :src="graNocna" class="image_link" />
-              <img :src="rightArrow" class="image_link_arrow" />
+              <component :is="rightArrow" class="image_link_arrow" />
             </div>
           </RouterLink>
         </div>
@@ -65,7 +68,7 @@ import BerealAlert from '../views/bereal/components/BerealAlert.vue'
           <RouterLink to="/zapisy">
             <div class="image_link_container">
               <img :src="homeCardLinkBg" class="image_link" />
-              <img :src="rightArrow" class="image_link_arrow" />
+              <component :is="rightArrow" class="image_link_arrow" />
             </div>
           </RouterLink>
         </div>
@@ -113,31 +116,29 @@ import BerealAlert from '../views/bereal/components/BerealAlert.vue'
               <RouterLink v-if="data.url && data.url.startsWith('/')" :to="data.url">
                 <div class="image_link_container" v-if="data.image">
                   <img :src="data.image" class="image_link" />
-                  <img :src="rightArrow" class="image_link_arrow" v-if="data.url" />
+                  <component :is="rightArrow" class="image_link_arrow" v-if="data.url" />
                 </div>
                 <ItemBox v-else-if="data.name && data.icon" :bigText="data.name" :rightIcon="data.url ? rightArrow : ''"
-                  :leftIcon="data.icon" />
+                  :leftIcon="data.icon"/>
                 <div class="image_link_container" v-else-if="data.name">
                   <img :src="homeCardLinkBg" class="image_link" style="max-height: 180px;" />
-                  <img :src="rightArrow" class="image_link_arrow dark_filter" v-if="data.url" />
+                  <component :is="rightArrow" class="image_link_arrow dark_filter" v-if="data.url" />
                   <p class="image_link_text" :style="{ 'font-size': data.font_size }">{{ data.name }}</p>
                 </div>
               </RouterLink>
               <a v-else :href="data.url" target="_blank">
                 <div class="image_link_container" v-if="data.image">
                   <img :src="data.image" class="image_link" />
-                  <img :src="rightArrow" class="image_link_arrow" v-if="data.url" />
+                  <component :is="rightArrow" class="image_link_arrow" v-if="data.url" />
                 </div>
                 <ItemBox v-if="data.name && data.icon" :bigText="data.name" :rightIcon="data.url ? rightArrow : ''"
                   :leftIcon="data.icon" />
                 <div class="image_link_container" v-else-if="data.name">
                   <img :src="homeCardLinkBg" class="image_link" style="max-height: 180px;" />
-                  <img :src="rightArrow" class="image_link_arrow dark_filter" v-if="data.url" />
+                  <component :is="rightArrow" class="image_link_arrow dark_filter" v-if="data.url" />
                   <p class="image_link_text" :style="{ 'font-size': data.font_size }">{{ data.name }}</p>
                 </div>
               </a>
-
-
             </span>
 
 
@@ -219,7 +220,7 @@ import BerealAlert from '../views/bereal/components/BerealAlert.vue'
         <div class="padding" v-if="apiDataStore.profile.data && apiDataStore.profile.data[0].tinder_active && apiDataStore.profile.data[0].tinder_profile && apiDataStore.profile.data[0].tinder_profile.user && apiDataStore.profile.data[0].tinder_profile.photo &&
           apiDataStore.profile.data[0].tinder_profile.description">
           <RouterLink to="/tinder">
-            <ItemBox bigText="Obozer" :rightIcon="rightArrow" :leftIcon="tinderIcon" left-icon-white />
+            <ItemBox bigText="Tinderownik" :rightIcon="rightArrow" :leftIcon="tinderIcon" left-icon-white />
           </RouterLink>
         </div>
 
@@ -233,7 +234,7 @@ import BerealAlert from '../views/bereal/components/BerealAlert.vue'
         <!-- Bingo -->
         <div class="padding" v-if="apiDataStore.bingoStatus.ready && apiDataStore.bingoStatus.data.is_active">
           <RouterLink to="/bingo">
-            <ItemBox bigText="Bingo" :rightIcon="rightArrow" left-icon-white />
+            <ItemBox bigText="Bingo" :rightIcon="rightArrow" :left-icon="bingoIcon" left-icon-white />
           </RouterLink>
         </div>
 
@@ -429,7 +430,7 @@ h3 {
   padding-bottom: 20px;
   margin: 20px auto;
   width: 95%;
-  background: var(--bg-lighter);
+  background: var(--primary);
   border-radius: 28px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -438,7 +439,7 @@ h3 {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -446,7 +447,7 @@ button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg);
+  background-color: var(--background-color);
 
   width: 130px;
   display: flex;
@@ -458,7 +459,7 @@ button {
 .partner {
   height: 100px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   max-width: 300px;
   object-fit: contain;
 }
@@ -475,7 +476,7 @@ button {
 
 .image_link {
   width: 100%;
-  border-radius: 20px;
+  border-radius: var(--radius);
   object-fit: cover;
 }
 
@@ -502,7 +503,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--theme-text);
+  color: var(--muted-foreground);
   font-size: 30px;
   font-weight: bold;
   padding: 0 25px;
@@ -518,7 +519,7 @@ button {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 .image_overlay {
@@ -530,14 +531,14 @@ button {
   flex-direction: column;
   margin: 30px 10px;
 
-  background: var(--bg);
+  background: var(--background-color);
   padding: 10px 10px 30px;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 
 a.button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -545,7 +546,7 @@ a.button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
   width: auto;
   display: inline-block;

@@ -1,10 +1,9 @@
 <script setup>
 
-import { IonPage, IonContent, IonIcon, IonButton, toastController, IonNavLink, } from '@ionic/vue';
+import { IonPage, IonContent, IonButton, toastController, IonNavLink, } from '@ionic/vue';
 import Tinder from '@/components/vue-tinder/Tinder.vue'
 import { apiRequest } from '@/stores/functions'
 import TopBar from '@/components/navigation/TopBar.vue'
-import { refresh, close, heart, star, help } from 'ionicons/icons'
 import OverlayView from '../../components/OverlayView.vue';
 import ProfileCircle from '@/components/navigation/ProfileCircle.vue'
 

@@ -6,17 +6,17 @@ import ItemBox from '../components/ItemBox.vue'
 import LoadingIndicator from '../components/LoadingIndicator.vue'
 import moment from 'moment'
 
-import logoutIcon from '../assets/icons8-logout.png'
-import politykaPrywatnosciIcon from '../assets/icons8-terms_and_conditions.png'
-import regulaminIcon from '../assets/icons8-rules_book.png'
-import icons8Icon from '../assets/icons8-icons8.png'
-import rightArrow from '../assets/arrow.svg'
-import adminPanelIcon from '../assets/icons8-administrative_tools.png'
-import AnnouncementIcon from '../assets/icons8-megaphone-100.png'
+import { 
+  Megaphone as AnnouncementIcon ,
+  LogOut as logoutIcon,
+  FileText as politykaPrywatnosciIcon,
+  BookOpenText as regulaminIcon,
+  MonitorCog as adminPanelIcon,
+  Flame as tinderIcon,
+  ChevronRight as rightArrow
+} from '@lucide/vue'
 
-
-// import copyIcon from '../assets/icons8-copy.png'
-import tinderIcon from '../assets/icons8-tinder-100.png'
+//import { Copy as copyIcon } from '@lucide/vue'
 
 import VueQr from 'vue-qr/src/packages/vue-qr.vue'
 import OverlayView from '../components/OverlayView.vue'
@@ -107,7 +107,7 @@ const VITE_API_URL = import.meta.env.VITE_API_URL;
       <IonNavLink router-link="/tinder/profil"
         v-if="apiDataStore.profile.ready && apiDataStore.profile.data[0].tinder_register_active">
         <ItemBox
-          :big-text="apiDataStore.profile.ready && apiDataStore.profile.data[0].tinder_profile.user ? 'Profil na Obozer' : 'Utwórz profil na Obozer'"
+          :big-text="apiDataStore.profile.ready && apiDataStore.profile.data[0].tinder_profile.user ? 'Profil na Tinderownik' : 'Utwórz profil na Tinderownik'"
           :leftIcon="tinderIcon" small leftIconWhite />
       </IonNavLink>
     </template>
@@ -135,17 +135,11 @@ const VITE_API_URL = import.meta.env.VITE_API_URL;
             :checked="profileData.notifications"></ion-toggle>
         </ItemBox>
 
-        <div class="spacer"></div>
-
         <a :href="REGULAMIN_LINK" target="_blank" v-if="REGULAMIN_LINK">
           <ItemBox big-text="Regulamin" :leftIcon="regulaminIcon" small />
         </a>
         <a :href="POLITYKA_PRYWATNOSCI_LINK" target="_blank" v-if="POLITYKA_PRYWATNOSCI_LINK">
           <ItemBox big-text="Polityka prywatności" :leftIcon="politykaPrywatnosciIcon" small />
-        </a>
-
-        <a href="https://icons8.com" target="_blank">
-          <ItemBox big-text="Użyte ikonki pochodzą z Icons8" :leftIcon="icons8Icon" small />
         </a>
 
         <div class="spacer"></div>
@@ -156,8 +150,7 @@ const VITE_API_URL = import.meta.env.VITE_API_URL;
 
         <div class="credits">
           <p>© Eventownik {{ moment().format('YYYY') }}</p>
-          <p>Made with 🍺 by <a href="https://www.linkedin.com/in/marvin-rucinski/" target="_blank"><u>Marvin</u></a> & Komisja ds. Informatyzacji SSPWr 🖥️</p>
-          <p>Powered by <a href="https://solvro.pwr.edu.pl/pl/" target="_blank"><u>Solvro</u></a></p>
+          <p>Made by <a href="https://www.linkedin.com/in/marvin-rucinski/" target="_blank"><u>Marvin</u></a> & Komisja ds. Informatyzacji SSPWr 🖥️</p>
         </div>
 
       </div>
@@ -225,7 +218,7 @@ export default {
 .credits {
   margin-top: 20px;
   font-size: 10px;
-  color: var(--light-text);
+  color: var(--foreground);
   text-align: center;
 }
 
@@ -235,24 +228,27 @@ export default {
 
 h5 {
   font-size: 11px;
-  color: var(--light-text);
+  color: var(--foreground);
   padding: 0 0 8px;
   margin-top: -10px;
 }
 
 h6 {
   font-size: 10px;
-  color: var(--light-text);
+  color: var(--foreground);
   text-align: center;
 }
 
 .version {
   font-size: 10px;
-  color: var(--light-text);
+  color: var(--foreground);
   text-align: center;
   margin-bottom: -17px;
 }
 
+p a {
+  color: var(--foreground) !important;
+}
 
 .zindex {
   z-index: 1;
@@ -412,8 +408,8 @@ span {
   height: var(--border-width);
   background: linear-gradient(90deg,
       transparent 30%,
-      var(--theme-text),
-      var(--theme-text));
+      var(--muted-foreground),
+      var(--muted-foreground));
 }
 
 .bottom {
@@ -421,8 +417,8 @@ span {
   bottom: 0;
   height: var(--border-width);
   background: linear-gradient(90deg,
-      var(--theme-text),
-      var(--theme-text),
+      var(--muted-foreground),
+      var(--muted-foreground),
       transparent 70%);
 }
 
@@ -433,8 +429,8 @@ span {
   height: 0;
   background: linear-gradient(180deg,
       transparent 30%,
-      var(--theme-text),
-      var(--theme-text));
+      var(--muted-foreground),
+      var(--muted-foreground));
 }
 
 .left {
@@ -443,8 +439,8 @@ span {
   width: var(--border-width);
   height: 0;
   background: linear-gradient(180deg,
-      var(--theme-text),
-      var(--theme-text),
+      var(--muted-foreground),
+      var(--muted-foreground),
       transparent 70%);
 }
 

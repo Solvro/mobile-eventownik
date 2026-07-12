@@ -24,16 +24,15 @@
 
 h1 {
   font-size: 40px;
-  
   margin-bottom: 20px;
   text-align: center;
-  background: var(--radial-gradient);
+  background: white;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .button {
-  border-radius: 20px;
+  border-radius: var(--radius);
   border: none;
   color: black;
   padding: 20px 35px;
@@ -47,6 +46,6 @@ h1 {
 
   margin-bottom: 12px;
 
-  background: var(--radial-gradient);
+  background: white;
 }
 </style>

@@ -61,7 +61,7 @@ export default {
   height: auto;
   /* max-height: 60vw; */
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 main {
@@ -77,14 +77,14 @@ main {
   flex-direction: column;
   margin: 30px 10px;
 
-  background: var(--bg);
+  background: var(--background-color);
   padding: 10px 10px 30px;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 button,
 a.button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -92,7 +92,7 @@ a.button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
   width: auto;
   display: inline-block;

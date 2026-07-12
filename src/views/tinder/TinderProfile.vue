@@ -17,7 +17,7 @@ import { Camera, CameraResultType } from '@capacitor/camera';
     <ion-page>
         <ion-content>
             <main v-if="profileData && profileData.tinder_profile">
-                <TopBar title="Profil na Obozer" back-link="/profil" />
+                <TopBar title="Profil na Tinderownik" back-link="/profil" />
                 <CustomTinderCard class="tinder-card" :item="profileData.tinder_profile" editable
                     @editDescription="$refs.editDescriptionOverlay.show();"
                     v-if="profileData.tinder_profile.user && profileData.tinder_profile.photo && profileData.tinder_profile.description"
@@ -122,9 +122,9 @@ export default {
     align-items: center;
     flex-direction: column;
 
-    background: var(--bg);
+    background: var(--background-color);
     padding: 20px 10px;
-    border-radius: 20px;
+    border-radius: var(--radius);
     margin: 20px;
     margin-top: calc(20px + var(--ion-safe-area-top)/2);
 }
@@ -143,8 +143,8 @@ ion-textarea {
     --padding-end: 10px;
     --padding-top: 10px;
     --padding-bottom: 10px;
-    --background: var(--bg-lighter);
-    --border-radius: 10px;
+    --background: var(--primary);
+    --border-radius: var(--radius);
     margin-bottom: 10px;
 }
 
@@ -171,7 +171,7 @@ h4 {
 .onboarding h4 {
     margin: 0;
     margin-bottom: 20px;
-    color: var(--light-text);
+    color: var(--primary-foreground);
 }
 
 .onboarding h5 {

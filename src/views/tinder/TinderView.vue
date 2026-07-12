@@ -1,11 +1,17 @@
 <script setup>
 
-import { IonPage, IonContent, IonIcon, IonButton, toastController } from '@ionic/vue';
+import { IonPage, IonContent, IonButton, toastController } from '@ionic/vue';
 import Tinder from '@/components/vue-tinder/Tinder.vue'
 import { apiRequest } from '@/stores/functions'
 import CustomTinderCard from './CustomTinderCard.vue'
 import TopBar from '@/components/navigation/TopBar.vue'
-import { refresh, close, heart, star, help } from 'ionicons/icons'
+import { 
+    RotateCcw as refresh,
+    X as close,
+    Heart as heart,
+    Star as star,
+    BadgeQuestionMark as help
+} from '@lucide/vue';
 import OverlayView from '../../components/OverlayView.vue';
 import ProfileCircle from '@/components/navigation/ProfileCircle.vue'
 
@@ -20,10 +26,10 @@ import ChatCardView from '@/views/ChatCardView.vue'
     <ion-page>
         <ion-content :fullscreen="false">
             <main>
-                <TopBar title="Obozer" backLink="/home" />
+                <TopBar title="Tinderownik" backLink="/home" />
                 <ProfileCircle />
 
-                <h2 v-if="noMoreProfiles && !queue.length">Koniec profilów.<br>Sprawdź później, czy dołączył ktoś nowy.
+                <h2 v-if="noMoreProfiles && !queue.length">Koniec profilów<br>Sprawdź później, czy dołączył ktoś nowy
                 </h2>
 
                 <h2 v-if="info">{{ info }}</h2>
@@ -31,25 +37,25 @@ import ChatCardView from '@/views/ChatCardView.vue'
                 <OverlayView ref="helpOverlay">
                     <div class="help-overlay">
                         <div class="help-content">
-                            <h4>Jak działa Obozer?</h4>
+                            <h4>Jak działa Tinderownik?</h4>
                             <div class="action-desc">
-                                <ion-icon :icon="heart" color="success"></ion-icon>
+                                <component :is="heart" class="like action-icon" />
                                 <p><span class="action-desc-title">Like</span> - Przesuń w prawo, aby polubić</p>
                             </div>
                             <div class="action-desc">
-                                <ion-icon :icon="close" color="danger"></ion-icon>
+                                <component :is="close" class="nope action-icon"/>
                                 <p><span class="action-desc-title">Nope</span> - Przesuń w lewo, aby odrzucić</p>
                             </div>
                             <div class="action-desc">
-                                <ion-icon :icon="star" color="primary"></ion-icon>
+                                <component :is="star" class="super action-icon"/>
                                 <div>
                                     <p><span class="action-desc-title">Super like</span> - przesuń w górę, aby mieć
                                         możliwość
                                         natychmiastowego czatowania nawet
                                         jeżeli nie masz matcha z
-                                        drugą osobą.</p>
+                                        drugą osobą</p>
                                     <p class="subdesctiprion">UWAGA! Super like możesz użyć raz na całe wydarzenie. Use it
-                                        wisely.</p>
+                                        wisely</p>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +72,7 @@ import ChatCardView from '@/views/ChatCardView.vue'
                     <div class="help-overlay">
                         <div class="help-content">
                             <h4>Match!</h4>
-                            <p>Gratulacje! Masz matcha z tą osobą. Możesz teraz zacząć rozmowę.</p>
+                            <p>Gratulacje! Masz matcha z tą osobą. Możesz teraz zacząć rozmowę</p>
                             <ChatCardView :chat="{ avatar: matchData.photo, name: matchData.name, users: [1, 1] }" />
                         </div>
                         <div class="help-footer">
@@ -87,36 +93,35 @@ import ChatCardView from '@/views/ChatCardView.vue'
                         <img class="down-pointer" slot="down" src="~img/down-txt.png" />
                         <img class="rewind-pointer" slot="rewind" src="~img/rewind-txt.png" /> -->
                     <template #rewind>
-                        <ion-icon :icon="refresh" color="warning" class="rewind-icon"></ion-icon>
+                        <component :is="refresh" class="rewind-icon"/>
                     </template>
 
                     <template #like>
-                        <ion-icon :icon="heart" color="success" class="like-pointer"></ion-icon>
+                        <component :is="heart" class="like-pointer" />
                     </template>
                     <template #nope>
-                        <ion-icon :icon="close" color="danger" class="nope-pointer"></ion-icon>
+                        <component :is="close" class="nope-pointer"/>
                     </template>
                     <template #super>
-                        <ion-icon :icon="star" color="primary" class="super-pointer"
-                            style="font-size: 50px;"></ion-icon>
+                        <component :is="star" class="super-pointer"/>
                     </template>
 
                 </Tinder>
                 <div class="btns" v-if="!(noMoreProfiles && !queue.length)">
                     <ion-button @click="decide('rewind')" shape="round">
-                        <ion-icon slot="icon-only" :icon="refresh" color="warning" class="rewind-icon"></ion-icon>
+                        <component slot="icon-only" :is="refresh" class="rewind-icon"></component>
                     </ion-button>
                     <ion-button @click="decide('nope')" shape="round">
-                        <ion-icon slot="icon-only" :icon="close" color="danger"></ion-icon>
+                        <component slot="icon-only" :is="close" class="nope-pointer"></component>
                     </ion-button>
                     <ion-button @click="decide('super')" shape="round">
-                        <ion-icon slot="icon-only" :icon="star" color="primary"></ion-icon>
+                        <component slot="icon-only" :is="star" class="super-pointer"></component>
                     </ion-button>
                     <ion-button @click="decide('like')" shape="round">
-                        <ion-icon slot="icon-only" :icon="heart" color="success"></ion-icon>
+                        <component slot="icon-only" :is="heart" class="like-pointer"></component>
                     </ion-button>
                     <ion-button @click="decide('help')" shape="round">
-                        <ion-icon slot="icon-only" :icon="help" class="help-icon"></ion-icon>
+                        <help class="help-icon"/>
                     </ion-button>
                 </div>
             </main>
@@ -249,8 +254,8 @@ export default {
 
 <style scoped>
 .help-overlay {
-    background-color: var(--bg);
-    border-radius: 10px;
+    background-color: var(--background-color);
+    border-radius: var(--radius);
     padding: 20px;
     margin: 0 20px;
     margin-top: 50px;
@@ -264,8 +269,6 @@ export default {
     display: flex;
     justify-content: center;
 }
-
-
 .action-desc {
     align-items: center;
     margin-bottom: 10px;
@@ -285,22 +288,17 @@ export default {
 
 .subdesctiprion {
     font-size: 12px;
-    color: var(--text-gray);
+    color: var(--muted-foreground);
     font-weight: bold;
-}
-
-ion-content {
-    --overflow: hidden
 }
 
 body {
     margin: 0;
     background-color: #20262e;
-    overflow: hidden;
 }
 
 h2 {
-    color: var(--text-gray);
+    color: var(--muted-foreground);
     text-align: center;
     margin: 20px;
     margin-top: 40px;
@@ -320,22 +318,36 @@ h2 {
     /* width: 90%;
     height: 90%; */
 }
+.like {
+    color: var(--ion-color-success);
+    fill: var(--ion-color-success);
+}
+.nope {
+    color: var(--ion-color-danger);
+}
+.super {
+    color: var(--ion-color-primary);
+    fill: var(--ion-color-primary);
+}
 
 .nope-pointer,
 .like-pointer {
     position: absolute;
     z-index: 1;
-    top: 20px;
-    width: 64px;
-    height: 64px;
+    top: 16px;
+    width: 32px;
+    height: 32px;
 }
 
 .nope-pointer {
-    right: 10px;
+    right: 16px;
+    color: var(--ion-color-danger);
 }
 
 .like-pointer {
-    left: 10px;
+    left: 16px;
+    color: var(--ion-color-success);
+    fill: var(--ion-color-success);
 }
 
 .super-pointer,
@@ -345,12 +357,11 @@ h2 {
     left: 0;
     right: 0;
     margin: auto;
-    /* width: 112px; */
-    height: 78px;
 }
 
 .super-pointer {
-    bottom: 40px;
+    color: var(--ion-color-primary);
+    fill: var(--ion-color-primary);
 }
 
 .down-pointer {
@@ -380,7 +391,7 @@ h2 {
     bottom: 30px; */
     margin: auto;
     margin-top: 50px;
-    height: 65px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -399,19 +410,19 @@ h2 {
     aspect-ratio: 1;
 
     --background: rgba(0, 0, 0, 0.439);
-    --background-activated: var(--bg-lighter)
+    --background-activated: var(--primary)
 }
 
 .btns ion-button:nth-child(2n + 1) {
-    width: 53px;
+    width: 52px;
 }
 
 .btns ion-button:nth-child(2n) {
-    width: 65px;
+    width: 64px;
 }
 
 .btns ion-button:nth-child(2n) ion-icon {
-    font-size: 35px;
+    font-size: 34px;
 }
 
 .btns ion-button:nth-last-child(1) {
@@ -423,8 +434,7 @@ h2 {
 }
 
 .rewind-icon {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+    color: var(--ion-color-warning);
 }
 
 

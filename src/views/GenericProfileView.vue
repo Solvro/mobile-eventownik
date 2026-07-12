@@ -6,16 +6,17 @@ import moment from 'moment'
 import { useApiDataStore } from '../stores/api.js'
 import { mapStores } from 'pinia'
 
-
-import rightArrow from '../assets/arrow.svg'
-import faqIcon from '../assets/icons8-faq.png'
-import busIcon from '../assets/icons8-bus.png'
-import opaskaIcon from '../assets/icons8-bangles.png'
-// import codeIcon from '../assets/icons8-redeem-90.png'
-import domekIcon from '../assets/icons8-exterior.png'
-import mealIcon from '../assets/icons8-cutlery.png'
-import chatIcon from '../assets/icons8-chat.png'
-import beerIcon from '../assets/icons8-beer.png'
+import { 
+  MessageCircleQuestionMark as faqIcon, 
+  Bus as busIcon,
+  Ribbon as opaskaIcon,
+  House as domekIcon,
+  Utensils as mealIcon,
+  MessagesSquare as chatIcon,
+  Beer as beerIcon,
+  ChevronRight as rightArrow
+} from '@lucide/vue'
+//import { RectangleEllipsis as codeIcon } from '@lucide/vue'
 
 import { IonPage, IonContent, toastController } from '@ionic/vue';
 import { Clipboard } from '@capacitor/clipboard';
@@ -171,7 +172,7 @@ defineProps([
 }
 
 h1 {
-  background: var(--radial-gradient);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -184,15 +185,17 @@ h1 {
   line-height: 25px;
   margin-top: 15px;
   z-index: 1;
+  color: var(--foreground);
 }
 
 .title {
   z-index: 1;
+  color: var(--foreground);
 }
 
 .email {
   font-size: 13px;
-  color: var(--light-text);
+  color: var(--foreground);
   z-index: 1;
 }
 
@@ -220,7 +223,7 @@ h1 {
 
 
 button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -228,7 +231,7 @@ button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
   width: 130px;
   display: flex;

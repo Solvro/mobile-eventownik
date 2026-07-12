@@ -33,10 +33,10 @@ defineProps({
 
 <style scoped>
 .textbox {
-  background-color: var(--bg-light-translusent);
-  border-radius: 20px;
+  background-color: var(--primary);
+  border-radius: var(--radius);
   position: relative;
-  padding: 20px;
+  padding: 16px;
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

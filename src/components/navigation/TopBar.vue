@@ -66,10 +66,11 @@ function goBack() {
 }
 
 h1 {
-  background: var(--radial-gradient);
+  background: var(--foreground);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 700;
 }
 
 .link {
@@ -97,9 +98,9 @@ h1 {
 }
 
 .arrow {
-  border: solid black;
+  border: solid var(--foreground);
   border-width: 0 4px 4px 0;
-  border-image: var(--radial-gradient) 1;
+  border-image: white 1;
   display: inline-block;
   padding: 7px;
   margin-left: 4px;
@@ -109,7 +110,6 @@ h1 {
 
 .header_absolute .arrow {
   border-image: none;
-  border-color: black;
 }
 
 .header-left {

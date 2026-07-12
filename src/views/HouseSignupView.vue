@@ -6,7 +6,7 @@ import { useApiDataStore } from '../stores/api.js'
 import { mapStores } from 'pinia'
 
 import HouseCard from '../components/HouseCard.vue'
-import cryingIcon from '../assets/icons8-crying.png'
+import { Frown as cryingIcon } from '@lucide/vue'
 
 import { IonPage, IonContent } from '@ionic/vue';
 </script>
@@ -60,7 +60,7 @@ import { IonPage, IonContent } from '@ionic/vue';
                 <div class="padding info-screen"
                     v-else-if="apiDataStore.houseSignupsInfo.ready && !apiDataStore.houseSignupsInfo.data.house_signups_active">
                     <h3>Zapisy zamknięte!</h3>
-                    <img :src="cryingIcon" alt="crying" style="width: 100px; margin: 20px auto; display: block;" />
+                    <component :is="cryingIcon" aria-label="frown" style="width: 100px; margin: 20px auto; display: block;" />
                     <p>Przepraszamy, ale zapisy na {{ apiDataStore.houseSignupsInfo.data.room_instead_of_house ?
                         'pokoje' : 'domki'
                         }} są
@@ -155,15 +155,15 @@ export default {
 }
 
 .info-screen p {
-    color: var(--text-gray);
+    color: var(--muted-foreground);
 }
 
 .info-screen p a {
-    color: var(--theme-dark)
+    color: var(--foreground)
 }
 
 button {
-    border-radius: 20px;
+    border-radius: var(--radius);
     border: none;
     color: white;
     padding: 10px 20px;
@@ -171,7 +171,7 @@ button {
     line-height: 16px;
     cursor: pointer;
 
-    background-color: var(--bg-light);
+    background-color: var(--primary);
 
     width: 160px;
     display: flex;

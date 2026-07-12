@@ -5,7 +5,7 @@ import LoadingIndicator from '../components/LoadingIndicator.vue'
 import OverlayView from '../components/OverlayView.vue'
 import ScannerBaseView from './ScannerBaseView.vue'
 
-import rightArrow from '../assets/arrow.svg'
+import { ChevronRight as rightArrow } from '@lucide/vue'
 
 import { useApiDataStore } from '../stores/api.js'
 import { mapStores } from 'pinia'
@@ -131,7 +131,7 @@ export default {
   padding-bottom: 20px;
   margin: 20px auto;
   width: 95%;
-  background: var(--bg-lighter);
+  background: var(--primary);
   border-radius: 28px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -141,7 +141,7 @@ export default {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -149,7 +149,7 @@ button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg);
+  background-color: var(--background-color);
 
   width: 130px;
   display: flex;

@@ -12,7 +12,7 @@ import HouseCard from '../components/HouseCard.vue'
 import { apiRequest } from '../stores/functions.js'
 
 import OverlayView from '../components/OverlayView.vue'
-import cryingIcon from '../assets/icons8-crying.png'
+import { Frown as cryingIcon } from '@lucide/vue'
 
 import { IonPage, IonContent, toastController } from '@ionic/vue';
 </script>
@@ -116,7 +116,7 @@ import { IonPage, IonContent, toastController } from '@ionic/vue';
                 <div class="padding info-screen"
                     v-else-if="apiDataStore.houseSignupsInfo.ready && !apiDataStore.houseSignupsInfo.data.house_signups_active">
                     <h3>Zapisy zamknięte!</h3>
-                    <img :src="cryingIcon" alt="crying" style="width: 100px; margin: 20px auto; display: block;" />
+                    <component :is="cryingIcon" aria-label="frown" style="width: 100px; margin: 20px auto; display: block;" />
                     <p>Przepraszamy, ale zapisy na {{ apiDataStore.houseSignupsInfo.data.room_instead_of_house ?
                         'pokoje' : 'domki'
                         }} są
@@ -353,7 +353,7 @@ export default {
     padding-bottom: 20px;
     margin: 20px auto;
     width: 95%;
-    background: var(--bg-lighter);
+    background: var(--primary);
     border-radius: 28px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -381,7 +381,7 @@ export default {
 }
 
 .info {
-    color: var(--text-dark);
+    color: var(--foreground);
     font-size: .8rem;
     text-align: center;
     margin: 5px 30px;
@@ -409,8 +409,8 @@ select,
 textarea {
     width: 100%;
     padding: 10px 15px 10px 15px;
-    border-radius: 20px;
-    border: 1px solid var(--text-gray);
+    border-radius: var(--radius);
+    border: 1px solid var(--muted-foreground);
     margin-bottom: 2px;
     font-size: 15px;
 
@@ -421,7 +421,7 @@ textarea {
     -moz-appearance: none;
     appearance: none;
 
-    background-color: var(--bg-light);
+    background-color: var(--primary);
 }
 
 input::placeholder {
@@ -469,15 +469,15 @@ button.error {
 }
 
 .info-screen p {
-    color: var(--text-gray);
+    color: var(--muted-foreground);
 }
 
 .info-screen p a {
-    color: var(--theme-dark)
+    color: var(--foreground)
 }
 
 button {
-    border-radius: 20px;
+    border-radius: var(--radius);
     border: none;
     color: white;
     padding: 10px 20px;
@@ -485,7 +485,7 @@ button {
     line-height: 16px;
     cursor: pointer;
 
-    background-color: var(--bg-light-translusent);
+    background-color: var(--primary);
 
     /* width: 100px; */
     display: flex;
@@ -497,8 +497,8 @@ button {
 
 button:disabled,
 button.disabled {
-    background-color: var(--bg-lighter);
-    color: var(--text-gray);
+    background-color: var(--primary);
+    color: var(--muted-foreground);
     cursor: not-allowed;
 }
 </style>

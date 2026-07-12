@@ -67,7 +67,7 @@ export default {
 .daily-quest {
   /* THEME COLORS */
   background: var(--daily-quest-gradient);
-  border-radius: 20px;
+  border-radius: var(--radius);
   padding: 15px 15px 5px 20px;
   margin-bottom: 20px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
@@ -95,7 +95,7 @@ export default {
   margin: 0;
   font-size: 11px;
   line-height: 11px;
-  color: var(--text-dark);
+  color: var(--foreground);
 }
 
 .timer h2 {

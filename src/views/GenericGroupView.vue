@@ -6,10 +6,12 @@ import TextBox from '../components/TextBox.vue'
 
 import OverlayView from '../components/OverlayView.vue'
 
-import rightArrow from '../assets/arrow.svg'
-import messangerIcon from '../assets/icons8-facebook_messenger.png'
-import phoneIcon from '../assets/phone_icon.svg'
-import mapIcon from '../assets/icons8-map_marker.png'
+import { 
+  Phone as phoneIcon,
+   Map as mapIcon,
+   ChevronRight as rightArrow,
+   MessageCircleMore as messengerIcon
+} from '@lucide/vue'
 import { IonPage, IonContent } from '@ionic/vue';
 
 import SavePhotoButton from '@/components/SavePhotoButton.vue'
@@ -35,7 +37,7 @@ defineProps([
   <ion-page>
     <ion-content :fullscreen="false">
       <main
-        :style="{ background: group && group.background ? ('linear-gradient(#00000080, #00000000), url(' + group.background + '), var(--bg-gradient)') : '' }">
+        :style="{ background: group && group.background ? ('linear-gradient(#00000080, #00000000), url(' + group.background + '), black') : '' }">
         <TopBar :title="title" :backLink="$router.options.history.state.back || backLink">
           <RouterLink v-if="topRightButtonText && topRightButtonUrl" :to="topRightButtonUrl">
             <p class="topRightButton">
@@ -79,7 +81,7 @@ defineProps([
           </OverlayView>
 
           <a v-if="group.messenger" :href="group.messenger" target="_blank">
-            <ItemBox :bigText="messengerDescription" :leftIcon="messangerIcon" :rightIcon="rightArrow" />
+            <ItemBox :bigText="messengerDescription" :leftIcon="messengerIcon" :rightIcon="rightArrow" />
           </a>
 
           <div v-if="ready && group.wardens && group.wardens.length">
@@ -112,19 +114,19 @@ main {
 }
 
 h1 {
-  background: var(--radial-gradient);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 h6 {
-  color: var(--text-gray);
+  color: var(--muted-foreground);
   text-align: center;
 }
 
 button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -132,7 +134,7 @@ button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
   width: 130px;
   display: flex;
@@ -170,7 +172,7 @@ button {
   max-height: 200px;
   object-fit: cover;
   object-position: top;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 .name {
@@ -181,7 +183,7 @@ button {
 
 .email {
   font-size: 13px;
-  color: var(--text-gray);
+  color: var(--muted-foreground);
 }
 
 .itemBoxContainer {
@@ -205,7 +207,7 @@ button {
   height: auto;
   /* max-height: 60vw; */
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 .image_overlay {
@@ -217,14 +219,14 @@ button {
   flex-direction: column;
   margin: 30px 10px;
 
-  background: var(--bg);
+  background: var(--background-color);
   padding: 10px 10px 30px;
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 button,
 a.button {
-  border-radius: 10px;
+  border-radius: var(--radius);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -232,7 +234,7 @@ a.button {
   line-height: 16px;
   cursor: pointer;
 
-  background-color: var(--bg-light);
+  background-color: var(--primary);
 
   width: 130px;
   display: flex;
@@ -248,7 +250,7 @@ a.button {
 .topRightButton {
   text-align: right;
   padding: 10px;
-  background: var(--radial-gradient);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

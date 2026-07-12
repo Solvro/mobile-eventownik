@@ -133,16 +133,12 @@ main {
 }
 
 .button {
-    background: var(--login-button-bg);
-    color: var(--login-button-color);
-
-
+    background: var(--primary);
+    color: var(--primary-foreground);
     font-size: 15px;
     /* line-height: 30px; */
     text-transform: uppercase;
-
     border: none;
-
     margin-top: 25px !important;
     font-weight: 600;
 
@@ -160,36 +156,26 @@ main {
 
 input {
     padding: 0 22px;
-    background-color: var(--login-button-bg);
-    border: 1px solid var(--login-button-bg);
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
     font-size: 12px;
-    color: var(--login-button-color);
+    color: var(--primary-foreground);
     font-weight: 600;
-
-
-
-    /* background: var(--radial-gradient); */
-    /* -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  background-clip: text; */
-
     box-sizing: border-box;
     box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.25);
-
 }
 
 /* input selected */
 input:focus {
     outline: none;
-    /* border: 1px solid var(--theme-light); */
 }
 
 input::selection {
-    background: var(--text-selection)
+    background: var(--foreground-selection)
 }
 
 input::placeholder {
-    color: var(--text-gray);
+    color: var(--muted-foreground);
 }
 
 #logo {
@@ -214,7 +200,7 @@ form {
     height: 60px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-radius: 30px;
+    border-radius: var(--radius);
 }
 
 
@@ -222,7 +208,7 @@ form {
 
 .small-link {
     font-size: 10px;
-    color: var(--text-gray);
+    color: var(--muted-foreground);
     font-weight: 600;
     text-decoration: none;
     padding: 10px;
@@ -238,7 +224,7 @@ form {
 
 .info {
     font-size: 14px;
-    color: var(--theme-text);
+    color: var(--muted-foreground);
     font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
@@ -246,7 +232,7 @@ form {
 
 .info2 {
     font-size: 12px;
-    color: var(--text-gray);
+    color: var(--muted-foreground);
     font-weight: 600;
     text-align: center;
     margin-top: 20px;

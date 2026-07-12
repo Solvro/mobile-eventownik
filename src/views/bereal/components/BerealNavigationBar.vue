@@ -1,8 +1,9 @@
 <script setup>
-import BackIcon from '../../../assets/icons8-back-100.png'
+import { 
+  ChevronLeft as BackIcon,
+  CircleUserRound as ProfileIcon
+} from '@lucide/vue'
 import Logo from '../../../assets/bEERreal1.png'
-import ProfileIcon from '../../../assets/icons8-male_user.png'
-
 
 import { useApiDataStore } from '@/stores/api.js'
 import { mapStores } from 'pinia'
@@ -17,7 +18,7 @@ import { IonNavLink, IonTabBar } from '@ionic/vue'
 
       <IonNavLink router-link="/" router-direction="none">
         <div class="navigation_bar__item">
-          <img :src="BackIcon" />
+          <BackIcon/>
           <p>Wyjdź</p>
         </div>
       </IonNavLink>
@@ -30,7 +31,7 @@ import { IonNavLink, IonTabBar } from '@ionic/vue'
 
       <IonNavLink router-link="/bereal/profil" router-direction="none">
         <div class="navigation_bar__item">
-          <img :src="ProfileIcon" />
+          <ProfileIcon/>
           <p>Profil</p>
         </div>
       </IonNavLink>
@@ -80,7 +81,7 @@ export default {
 .navigation-bar {
   height: 85px;
   /* background-color: #1b1b1bbb; */
-  background-color: var(--bg-translusent);
+  background-color: color-mix(in hsl, var(--background-color) 70%, var(--border-color));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
@@ -105,7 +106,7 @@ export default {
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  /* background-color: var(--bg-lighter); */
+  /* background-color: var(--primary); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,13 +146,13 @@ export default {
 }
 
 .navigation_bar__item img {
-  filter: drop-shadow(0px 100px 0 var(--theme-dark));
+  filter: drop-shadow(0px 100px 0 var(--foreground));
   transform: translateY(-100px);
   width: 24px;
   object-fit: contain;
 }
 
 .navigation_bar__item.selected img {
-  filter: drop-shadow(0px 100px 0 var(--theme-light));
+  filter: drop-shadow(0px 100px 0 var(--foreground));
 }
 </style>

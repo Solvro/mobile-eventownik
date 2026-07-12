@@ -1,17 +1,17 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-import SosIcon from '../../assets/icons8-sos.png'
-// import MapIcon from '../../assets/icons8-map_marker.png'
+import { 
+  LifeBuoy as SosIcon,
+  Hammer as HammerIcon,
+  CalendarDays as CalendarIcon,
+  Logs as MenuIcon,
+  MessagesSquare as ChatIcon
+} from '@lucide/vue'
+//import { Map } from '@lucide/vue'
+//import { PencilRuler } from '@lucide/vue'
+//import { CircleUserRound } from '@lucide/vue'
+//import { ScanQrCode } from '@lucide/vue'
 import Logo from '../../assets/ikona.png'
-import HammerIcon from '../../assets/icons8-hammer-90.png'
-// import WorkshopIcon from '../../assets/warsztaty.svg'
-import CalendarIcon from '../../assets/icons8-calendar-100.png'
-// import UserIcon from '../../assets/icons8-male_user.png'
-import MenuIcon from '../../assets/icons8-squared_menu.png'
-
-// import ScannerIcon from '../../assets/icons8-barcode_reader.png'
-
-import ChatIcon from '../../assets/icons8-chat.png'
 
 import { useApiDataStore } from '../../stores/api.js'
 import { IonNavLink, IonTabBar } from '@ionic/vue'
@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
 
       <IonNavLink router-link="/sos" router-direction="none">
         <div class="navigation_bar__item">
-          <img :src="SosIcon" alt="sos" />
+          <component :is="SosIcon" aria-label="sos" />
           <p>SOS</p>
         </div>
       </IonNavLink>
@@ -68,13 +68,13 @@ onBeforeUnmount(() => {
       <IonNavLink router-link="/warsztaty" router-direction="none"
         v-if="!apiDataStore.permissions.ready || !apiDataStore.permissions.data.length">
         <div class="navigation_bar__item">
-          <img :src="HammerIcon" alt="warsztaty" />
+          <component :is="HammerIcon" aria-label="warsztaty" />
           <p>Warsztaty</p>
         </div>
       </IonNavLink>
       <IonNavLink router-link="/admin-menu" router-direction="none" v-else>
         <div class="navigation_bar__item">
-          <img :src="MenuIcon" alt="menu" />
+          <component :is="MenuIcon" aria-label="menu" />
           <p>Menu</p>
         </div>
       </IonNavLink>
@@ -87,13 +87,13 @@ onBeforeUnmount(() => {
       </IonNavLink>
       <IonNavLink router-link="/harmonogram" router-direction="none">
         <div class="navigation_bar__item">
-          <img :src="CalendarIcon" alt="harmonogram" />
+          <component :is="CalendarIcon" aria-label="harmonogram" />
           <p>Harmonogram</p>
         </div>
       </IonNavLink>
       <IonNavLink router-link="/czaty" router-direction="none">
         <div class="navigation_bar__item">
-          <img :src="ChatIcon" alt="user" />
+          <component :is="ChatIcon" aria-label="user" />
           <p>Czaty</p>
         </div>
       </IonNavLink>
@@ -108,7 +108,7 @@ onBeforeUnmount(() => {
   height: var(--nav-height);
   border: 0;
   /* background-color: #1b1b1bbb; */
-  background-color: var(--bg-translusent);
+  background: color-mix(in hsl, var(--background-color) 70%, var(--border-color));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
@@ -124,7 +124,8 @@ onBeforeUnmount(() => {
 
 .navigation-bar__content {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  place-items: center;
   max-width: 550px;
   margin: 0 auto;
 }
@@ -133,7 +134,7 @@ onBeforeUnmount(() => {
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  /* background-color: var(--bg-lighter); */
+  /* background-color: var(--primary); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +156,7 @@ onBeforeUnmount(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--foreground);
   font-size: 9px;
   text-align: center;
 
@@ -172,13 +173,13 @@ onBeforeUnmount(() => {
 }
 
 .navigation_bar__item img {
-  filter: drop-shadow(0px 100px 0 var(--theme-dark));
+  filter: drop-shadow(0px 100px 0 var(--foreground));
   transform: translateY(-100px);
   width: 24px;
   object-fit: contain;
 }
 
 .navigation_bar__item.selected img {
-  filter: drop-shadow(0px 100px 0 var(--theme-light));
+  filter: drop-shadow(0px 100px 0 var(--primary-foreground));
 }
 </style>

@@ -3,13 +3,13 @@ import { useApiDataStore } from '@/stores/api.js'
 import { mapStores } from 'pinia'
 
 import { IonNavLink, IonIcon } from '@ionic/vue';
-import { personCircle } from 'ionicons/icons';
+import { CircleUserRound } from '@lucide/vue';
 </script>
 
 <template>
     <ion-nav-link router-link="/profil" router-direction="none" class="profile-circle">
         <img :src="avatar" v-if="avatar" />
-        <ion-icon :icon="personCircle" v-else />
+        <component :is="CircleUserRound" class="profile-circle-component" v-else />
     </ion-nav-link>
 </template>
 
@@ -32,11 +32,15 @@ export default {
 </script>
 
 <style scoped>
+.profile-circle-component {
+    width: 35px;
+    height: 35px;
+}
 .profile-circle {
     position: absolute;
     top: calc(20px + var(--ion-safe-area-top)/2);
-    right: 20px;
-    color: var(--bg-light);
+    right: 25px;
+    color: var(--primary);
     z-index: 11;
 }
 
