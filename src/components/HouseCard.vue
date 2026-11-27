@@ -1,7 +1,7 @@
 <script setup>
 
 import { 
-    house as domekIcon,
+    House as domekIcon,
     ChevronRight as rightArrow
 } from '@lucide/vue';
 
